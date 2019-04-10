@@ -1,0 +1,7 @@
+<library path="lib/libpointcloud_camera">
+    <class name="pointcloud_camera/PointCloudNodeFactory" type="pointcloud_camera::PointCloudNodeFactory" base_class_type="nodelet::Nodelet">
+        <description>
+            Example camera nodelet using the PointCloud SDK 2.0 library for PointCloud Tof cameras
+        </description>
+        </class>
+ </library>

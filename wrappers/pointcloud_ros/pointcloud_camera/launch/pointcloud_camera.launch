@@ -1,0 +1,26 @@
+<launch>
+  <arg name="camera"              default="camera"/>
+  <arg name="tf_prefix"           default="$(arg camera)"/>
+
+  <arg name="depth_width"         default="640"/>
+  <arg name="depth_height"        default="480"/>
+  <arg name="enable_depth"        default="true"/>
+
+  <arg name="enable_pointcloud"   default="true"/>
+  <arg name="depth_fps"           default="30"/>  
+  <arg name="enable_sync"         default="false"/>
+  
+  <group ns="$(arg camera)">
+    <include file="$(find pointcloud_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="tf_prefix"                value="$(arg tf_prefix)"/>
+      
+      <arg name="depth_fps"                value="$(arg depth_fps)"/>
+      <arg name="enable_pointcloud"        value="$(arg enable_pointcloud)"/>
+      <arg name="enable_sync"              value="$(arg enable_sync)"/>
+      
+      <arg name="depth_width"              value="$(arg depth_width)"/>
+      <arg name="depth_height"             value="$(arg depth_height)"/>
+      <arg name="enable_depth"             value="$(arg enable_depth)"/>
+    </include>
+  </group>
+</launch>

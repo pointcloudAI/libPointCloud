@@ -1,0 +1,6 @@
+<launch>
+  <arg name="camera"                default="camera"/>
+  <group ns="$(arg camera)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pointcloud_camera)/rviz/pointcloud.rviz" required="true" />
+  </group>
+</launch>

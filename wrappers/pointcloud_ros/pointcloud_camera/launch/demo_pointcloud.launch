@@ -1,0 +1,15 @@
+<launch>
+  <arg name="camera"                default="camera"/>
+  <group ns="$(arg camera)">
+    <include file="$(find pointcloud_camera)/launch/includes/nodelet.launch.xml">
+      <arg name="depth_width"       value="640"/>
+      <arg name="depth_height"      value="480"/>
+      <arg name="depth_fps"         value="30"/>
+      <arg name="enable_pointcloud" value="true"/>
+      <arg name="enable_sync"       value="true"/>
+      <arg name="tf_prefix"         value="$(arg camera)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pointcloud_camera)/rviz/pointcloud.rviz" required="true" />
+  </group>
+</launch>
