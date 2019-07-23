@@ -18,28 +18,26 @@ message("ARCH = ${CMAKE_SYSTEM_PROCESSOR}")
 
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  set(CMAKE_CXX_FLAGS  "-msse2 -pthread -std=c++11 -fPIC -ffast-math")
   set(COMMON_LIBS
     /usr/local/lib
     ./lib)
-
-  if(SYSTEM_MAJOR_VERSION STREQUAL "3")
-    set(COMMON_INCLUDE
+     if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
+      set(CMAKE_CXX_FLAGS  "-pthread -std=c++11 -fPIC -ffast-math -fpermissive")
+      set(COMMON_INCLUDE
+         /usr/include/libusb-1.0
+         ./include/
+         ./libs/ubuntu_arm/include/pointcloud-1.0.0/
+       )
+       set(PointCloud ./libs/ubuntu_arm/lib)
+     else()
+     set(CMAKE_CXX_FLAGS  "-msse2 -pthread -std=c++11 -fPIC -ffast-math")
+     set(COMMON_INCLUDE
       /usr/include/libusb-1.0
       ./include/
-      ./third_party/voxelsdk_ubuntu_3.13/include/pointcloud-1.0.0)
-    set(voxel ./third_party/voxelsdk_ubuntu_3.13/lib)
-    message("use Voxel SDK ./third_party/voxelsdk_unbuntu_3.13/lib")
-  else(SYSTEM_MAJOR_VERSION STREQUAL "4")
-    set(COMMON_INCLUDE
-      /usr/include/libusb-1.0
-      ./include/
-      ./third_party/voxelsdk_ubuntu_4.13/include/pointcloud-1.0.0)
-    set(PointCloud ./third_party/voxelsdk_ubuntu_4.13/lib)
-    message("use Voxel SDK ./third_party/voxelsdk_ubuntu_4.13/lib")
-    #message(FATAL_ERROR "This project not support this VERSION=${SYSTEM_VERSION}")
-  endif()
-  
+      ./libs/macos/include/pointcloud-1.0.0/
+  )
+    set(PointCloud ./libs/ubuntu/lib)
+    endif()
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   set(CMAKE_CXX_FLAGS  "-msse2 -std=c++11 -fPIC -ffast-math")
   set(COMMON_LIBS
@@ -76,6 +74,6 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 set(CPACK_PACKAGE_VENDOR "pointcloud.ai")
 set(CPACK_SOURCE_GENERATOR "Developer")
 
-add_subdirectory(examples/DepthGesture)
+#add_subdirectory(examples/DepthGesture)
 add_subdirectory(examples/DepthMeasure)
 add_subdirectory(examples/DepthAscii)
