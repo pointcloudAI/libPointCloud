@@ -111,24 +111,21 @@ print(" ||| resolution: %d x %d" %(frameSize.width,frameSize.height))
 ```
 ## 3. Add filter 
 
+
 ```
-CameraSystem sys;
-FilterPtr fp = sys.createFilter("PointCloud::IIRFilter", DepthCamera::FRAME_RAW_FRAME_PROCESSED);
-  
-fp->set("gain", 0.2f);
+## Init filter first
+sys = PointCloud.CameraSystem()
+filter = sys.createFilter("PointCloud::IIRFilter", DepthCamera::FRAME_RAW_FRAME_PROCESSED);
+if filter is None:
+   return None
 
-if(!fp)
-{
-logger(LOG_ERROR) << "Failed to get IIRFilter" << std::endl;
-return -1;
-}else{
-  std::cout << " ||| Successfully createFilter IIRFilter " << std::endl;
+## Create filter for usring depth camera:
+    
+filterIndex = depthCamera.addFilter(filter, DepthCamera::FRAME_RAW_FRAME_PROCESSED);
 
-}
+print(" ||| Successfully add  IIRFilter at  %d " %filterIndex)
 
-int position = depthCamera->addFilter(fp, DepthCamera::FRAME_RAW_FRAME_PROCESSED);
-
-std::cout << " ||| Successfully add  IIRFilter at  "<< position << std::endl;
+depthCamera.removeFilter(filterIndex, DepthCamera::FRAME_RAW_FRAME_PROCESSED);
     
 ```
 More filter usage please refer to Filter usage documents
