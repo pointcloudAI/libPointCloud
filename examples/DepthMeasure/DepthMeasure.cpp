@@ -29,170 +29,181 @@ int main(int argc,char *argv[]) {
     
     // logger.setDefaultLogLevel(LOG_DEBUG);
     CameraSystem sys;
-    fstream fs("/Users/hanyu/Downloads/i_q.bin",ios::in);
-    if(!fs)
-      cout<<"open error"<<endl;
-    else
-      cout<<"open ok"<<endl;
-    
-
-    FrameStreamReader r("/Users/hanyu/Desktop/dump_file2.vxl", sys);
-    
-    if(!r.isStreamGood())
-    {
-        logger(LOG_ERROR) << "File could not be opened for reading" << std::endl;
+   
+    DevicePtr     device;
+    const Vector<DevicePtr> &devices = sys.scan();
+    bool found = false;
+    for (auto &d: devices){
+        logger(LOG_INFO) <<  " ||| Detected devices: "  << d->id() << std::endl;
+        device = d;
+        found = true;
+    }
+    if (!found){
+      logger(LOG_INFO) <<  " ||| No device found "  << std::endl;
+      return 0;
+    }
+    DepthCameraPtr depthCamera;
+    depthCamera = sys.connect(device);
+    if (!depthCamera) {
+        logger(LOG_ERROR) << " ||| Could not load depth camera for device "<< device->id() << std::endl;
         return 1;
     }
-    
-    std::cout << "Number of data frames in stream = " << r.size() << std::endl;
-    return 0;
-    
 
-    // DevicePtr     device;
-    // const Vector<DevicePtr> &devices = sys.scan();
-    // bool found = false;
-    // for (auto &d: devices){
-    //     logger(LOG_INFO) <<  " ||| Detected devices: "  << d->id() << std::endl;
-    //     device = d;
-    //     found = true;
-    // }
-    // if (!found){
-    //   logger(LOG_INFO) <<  " ||| No device found "  << std::endl;
-    //   return 0;
-    // }
-    // DepthCameraPtr depthCamera;
-    // depthCamera = sys.connect(device);
-    // if (!depthCamera) {
-    //     logger(LOG_ERROR) << " ||| Could not load depth camera for device "<< device->id() << std::endl;
-    //     return 1;
-    // }
-
-    //   FrameRate r;
-    //   if(depthCamera->getFrameRate(r))
-    //     logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
-    //   r.numerator = 15;
-    //   depthCamera->setFrameRate(r);
-    //   // if(depthCamera->getFrameRate(r))
-    //   logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
+      FrameRate r;
+      if(depthCamera->getFrameRate(r))
+        logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
+      r.numerator = 15;
+      depthCamera->setFrameRate(r);
+      // if(depthCamera->getFrameRate(r))
+      logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
       
-    //   // FrameSize s;
-    //   // if(depthCamera->getFrameSize(s))
-    //   // logger(LOG_INFO) << " ||| Frame size :  " << s.width << " * "<< s.height << std::endl;
-    //   // ParameterPtr p;
-    //   // float angle ;
-    //   // depthCamera->getFieldOfView(angle);
-    //   // logger(LOG_INFO) << " ||| FOV :  " << angle  << std::endl;
-    //   // unsigned int  intg_time ;
-    //   // depthCamera->get("intg_time",intg_time);
-    //   // logger(LOG_INFO) << " ||| INTG_TIME :  " << intg_time  << std::endl;
+      FrameSize s;
+      if(depthCamera->getFrameSize(s))
+      logger(LOG_INFO) << " ||| Frame size :  " << s.width << " * "<< s.height << std::endl;
+      int centerPointIndex = (s.width/2 ) * s.height + s.width/2;
+      // ParameterPtr p;
+      // float angle ;
+      // depthCamera->getFieldOfView(angle);
+      // logger(LOG_INFO) << " ||| FOV :  " << angle  << std::endl;
+      // unsigned int  intg_time ;
+      // depthCamera->get("intg_time",intg_time);
+      // logger(LOG_INFO) << " ||| INTG_TIME :  " << intg_time  << std::endl;
      
-    //   // intg_time = 6;
-    //   // depthCamera->set("intg_time",intg_time);
-    //   // depthCamera->get("intg_time",intg_time);
-    //   // logger(LOG_INFO) << " ||| INTG_TIME :  " << intg_time  << std::endl;
+      // intg_time = 6;
+      // depthCamera->set("intg_time",intg_time);
+      // depthCamera->get("intg_time",intg_time);
+      // logger(LOG_INFO) << " ||| INTG_TIME :  " << intg_time  << std::endl;
      
 
-    //   // float  mod_freq1 ;
-    //   // depthCamera->get("mod_freq1",mod_freq1);
-    //   // logger(LOG_INFO) << " ||| Modulation frequency :  " << mod_freq1  << std::endl;
-    //   // mod_freq1 = 12;
-    //   // depthCamera->set("mod_freq1",mod_freq1);
-    //   // depthCamera->get("mod_freq1",mod_freq1);
-    //   // logger(LOG_INFO) << " ||| Modulation frequency :  " << mod_freq1  << std::endl;
+      // float  mod_freq1 ;
+      // depthCamera->get("mod_freq1",mod_freq1);
+      // logger(LOG_INFO) << " ||| Modulation frequency :  " << mod_freq1  << std::endl;
+      // mod_freq1 = 12;
+      // depthCamera->set("mod_freq1",mod_freq1);
+      // depthCamera->get("mod_freq1",mod_freq1);
+      // logger(LOG_INFO) << " ||| Modulation frequency :  " << mod_freq1  << std::endl;
 
-    //   // Vector<SupportedVideoMode> videoModes;
+      // Vector<SupportedVideoMode> videoModes;
 
-    //   // if(depthCamera->getSupportedVideoModes(videoModes))
-    //   // {
-    //   //   std::cout << "Supported video modes" << std::endl;
+      // if(depthCamera->getSupportedVideoModes(videoModes))
+      // {
+      //   std::cout << "Supported video modes" << std::endl;
         
-    //   //   for(auto i = 0; i < videoModes.size(); i++)
-    //   //   {
-    //   //     std::cout << videoModes[i].frameSize.width << "x" << videoModes[i].frameSize.height << "@" << videoModes[i].getFrameRate() << "fps" << std::endl;
-    //   //   } 
-    //   // }
+      //   for(auto i = 0; i < videoModes.size(); i++)
+      //   {
+      //     std::cout << videoModes[i].frameSize.width << "x" << videoModes[i].frameSize.height << "@" << videoModes[i].getFrameRate() << "fps" << std::endl;
+      //   } 
+      // }
     
-    // if (!depthCamera->isInitialized()) {
-    //     logger(LOG_ERROR) << " ||| Depth camera not initialized for device "<< device->id() << std::endl;
-    //     return 1;
-    // }
-    // std::cout << " ||| Successfully loaded depth camera for device " << std::endl;
-    
-    // // FilterPtr fp = sys.createFilter("PointCloud::IIRFilter", DepthCamera::FRAME_RAW_FRAME_PROCESSED);
+    if (!depthCamera->isInitialized()) {
+        logger(LOG_ERROR) << " ||| Depth camera not initialized for device "<< device->id() << std::endl;
+        return 1;
+    }
+    std::cout << " ||| Successfully loaded depth camera for device " << std::endl;
+    TimeStampType lastTimeStamp = 0;
+    // FilterPtr fp = sys.createFilter("PointCloud::IIRFilter", DepthCamera::FRAME_RAW_FRAME_PROCESSED);
   
-    // // fp->set("gain", 0.2f);
+    // fp->set("gain", 0.2f);
 
-    // // if(!fp)
-    // // {
-    // //  logger(LOG_ERROR) << "Failed to get IIRFilter" << std::endl;
-    // //  return -1;
-    // // }else{
-    // //     std::cout << " ||| Successfully createFilter IIRFilter " << std::endl;
-    
-    // // }
-   
-    // // int position = depthCamera->addFilter(fp, DepthCamera::FRAME_RAW_FRAME_PROCESSED);
-    
-    // // std::cout << " ||| Successfully add  IIRFilter at  "<< position << std::endl;
-    
-
-    // // Must register one callback before starting capture 
-    // //depthCamera->registerCallback(DepthCamera::FRAME_RAW_FRAME_PROCESSED,rawdataCallback);
-    // depthCamera->registerCallback(DepthCamera::FRAME_RAW_FRAME_PROCESSED, [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType c) {
-    //     logger(LOG_INFO) <<  " ||| on registerCallback" << std::endl;
-    //     const ToFRawFrame *d = dynamic_cast<const ToFRawFrame *>(&frame);
-    //     if(!d)
-    //     {
-    //       std::cout << "Null frame captured? or not of type ToFRawFrame" << std::endl;
-    //       return;
-    //     }
-        
-    //     std::cout << "Capture frame " << d->id << "@" << d->timestamp << std::endl;
-
-    //     if(d->phase()){   
-    //         ushort phase_t=((ushort *)d->phase())[2369];
-    //       std::cout << " ||| Center Point's phase :  " << phase_t << std::endl;
-    //     }
-
-        
-    //     // if(d->amplitude())
-    //     //   f.write((char *)d->amplitude(), d->amplitudeWordWidth()*d->size.width*d->size.height);
-        
-    //     // if(d->ambient())
-    //     //   f.write((char *)d->ambient(), d->ambientWordWidth()*d->size.width*d->size.height);
-        
-    //     // if(d->flags())
-    //     //   f.write((char *)d->flags(), d->flagsWordWidth()*d->size.width*d->size.height);
-        
-
-    // });
-    //  depthCamera->registerCallback(DepthCamera::FRAME_DEPTH_FRAME, [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType c) {
-    //     const DepthFrame *d = dynamic_cast<const DepthFrame *>(&frame);
-        
-    //     if(!d)
-    //     {
-    //       std::cout << "Null frame captured? or not of type DepthFrame" << std::endl;
-    //       return;
-    //     }
-    //     float x = d->depth[2430];
-    //     //memcpy((char *)depthFrame, (char *)d->depth.data(), sizeof(short) * 80 * 60);
-    
-    //     // uint16_t depth_t=((uint16_t *)d->depth.data())[2430];
-    //     std::cout << " ||| Center Point's depth : " << x << std::endl;
-      
-    //   });
-  
-    // if(depthCamera->start()){
-    //       logger(LOG_INFO) <<  " ||| start camera pass" << std::endl;
-          
+    // if(!fp)
+    // {
+    //  logger(LOG_ERROR) << "Failed to get IIRFilter" << std::endl;
+    //  return -1;
     // }else{
-    //     logger(LOG_INFO) <<  " ||| start camera fail" << std::endl;  
+    //     std::cout << " ||| Successfully createFilter IIRFilter " << std::endl;
+    
     // }
+   
+    // int position = depthCamera->addFilter(fp, DepthCamera::FRAME_RAW_FRAME_PROCESSED);
+    
+    // std::cout << " ||| Successfully add  IIRFilter at  "<< position << std::endl;
+    
+
+    // Must register one callback before starting capture 
+    //depthCamera->registerCallback(DepthCamera::FRAME_RAW_FRAME_PROCESSED,rawdataCallback);
+    depthCamera->registerCallback(DepthCamera::FRAME_RAW_FRAME_PROCESSED, [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType c) {
+        logger(LOG_INFO) <<  " ||| on registerCallback" << std::endl;
+        const ToFRawFrame *d = dynamic_cast<const ToFRawFrame *>(&frame);
+        if(!d)
+        {
+          std::cout << "Null frame captured? or not of type ToFRawFrame" << std::endl;
+          return;
+        }
+        
+        std::cout << "Capture frame " << d->id << "@" << d->timestamp << std::endl;
+
+        if(d->phase()){   
+            ushort phase_t=((ushort *)d->phase())[centerPointIndex];
+          std::cout << " ||| Center Point's phase :  " << phase_t << std::endl;
+        }
+
+        
+        // if(d->amplitude())
+        //   f.write((char *)d->amplitude(), d->amplitudeWordWidth()*d->size.width*d->size.height);
+        
+        // if(d->ambient())
+        //   f.write((char *)d->ambient(), d->ambientWordWidth()*d->size.width*d->size.height);
+        
+        // if(d->flags())
+        //   f.write((char *)d->flags(), d->flagsWordWidth()*d->size.width*d->size.height);
+        
+
+    });
+     depthCamera->registerCallback(DepthCamera::FRAME_DEPTH_FRAME, [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType c) {
+        const DepthFrame *d = dynamic_cast<const DepthFrame *>(&frame);
+        
+        if(!d)
+        {
+          std::cout << "Null frame captured? or not of type DepthFrame" << std::endl;
+          return;
+        }
+        float x = d->depth[centerPointIndex];
+        //memcpy((char *)depthFrame, (char *)d->depth.data(), sizeof(short) * 80 * 60);
+    
+        // uint16_t depth_t=((uint16_t *)d->depth.data())[2430];
+        std::cout << " ||| Center Point's depth : " << x << std::endl;
+      
+      });
+     // depthCamera->registerCallback(DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME , [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType frameType) {
+     //    if(frameType == DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME){
+     //        //const PointCloudFrame *pcf = dynamic_cast<const PointCloudFrame *>(&frame);
+     //        const XYZIPointCloudFrame *pcf = dynamic_cast<const XYZIPointCloudFrame *>(&frame);
+         
+     //        if(!pcf)
+     //        {
+     //          std::cout << "Null frame captured? or not of type PointCloudFrame" << std::endl;
+     //          return;
+     //        }
+     //         std::cout << " PointCloudFrame size :" << pcf->points.size() << std::endl;
+           
+     //        if(lastTimeStamp != 0)
+     //           std::cout << " (" << 1E6/(pcf->timestamp - lastTimeStamp) << " fps)";
+     //        lastTimeStamp = pcf->timestamp;
+
+     //         IntensityPoint p = pcf->points[centerPointIndex];
+     //        // const XYZIPointCloudFrame *f = dynamic_cast<const XYZIPointCloudFrame *>(&frame);
+     //        // float x = pcf->depth[centerPointIndex];
+     //        //memcpy((char *)depthFrame, (char *)d->depth.data(), sizeof(short) * 80 * 60);
+        
+     //        // uint16_t depth_t=((uint16_t *)d->depth.data())[2430];
+     //         std::cout << " ||| Center Point   x : " << p.x << " y: " << p.y<< " z: "  << p.z  << " i: " << p.i << std::endl;
+
+     //        }
+        
+      
+     //  });
+  
+    if(depthCamera->start()){
+          logger(LOG_INFO) <<  " ||| start camera pass" << std::endl;
+          
+    }else{
+        logger(LOG_INFO) <<  " ||| start camera fail" << std::endl;  
+    }
        
-    // std::cout << "Press any key to quit" << std::endl;
-    // getchar();
-    // depthCamera->stop();
-    // sys.disconnect(depthCamera,true);
+    std::cout << "Press any key to quit" << std::endl;
+    getchar();
+    depthCamera->stop();
+    sys.disconnect(depthCamera,true);
     
 }
 

@@ -16,10 +16,19 @@
 #include "Configuration.h"
 
 #define BULK_XFER_EXTRA_SIZE  255
+#define EBD_RAW12_DATA_LENGTH 396
+#define EBD_INT16_DATA_LENGTH 528
+
 #define CALIB_SECT_LENS "lens"
 #define CALIB_SECT_LENS_ID 0
 #define TSENSOR "tsensor"
 #define TILLUM  "tillum"
+#define EBD_DEPTH_MAP_ID_OFFSET 87
+#define EBD_FRAME_COUNT_OFFSET 63
+#define EBD_SUB_FRAME_ID_OFFSET 54
+#define EBD_TSENSOR_START_OFFSET 117
+#define EBD_TILLUM_OFFSET 2
+#define EBD_POWER_SUPPLIER 3
 
 namespace PointCloud
 {
@@ -152,6 +161,7 @@ namespace PointCloud
           bool _init();
           virtual bool _start() = 0;
           virtual bool _stop() = 0;
+          virtual bool _close() = 0;
         
           virtual bool _captureRawUnprocessedFrame(RawFramePtr &rawFrame) = 0;
           virtual bool _processRawFrame(const RawFramePtr &rawFrameInput, RawFramePtr &rawFrameOutput) = 0; // here output raw frame will have processed data, like ToF data for ToF cameras

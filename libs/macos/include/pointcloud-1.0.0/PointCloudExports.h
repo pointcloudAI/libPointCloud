@@ -39,4 +39,4 @@
 #  endif
 #endif
 
-#endif /* POINTCLOUD_EXPORT_H */
+#endif
