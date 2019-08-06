@@ -8,8 +8,9 @@
 #define POINTCLOUD_CONFIGURATION_H
 
 #include "Common.h"
+#include "Serializable.h"
 #include "DataPacket.h"
-//#include "HardwareSerializer.h"
+#include "HardwareSerializer.h"
 
 #define FILE_PREFIX "file:"
 
@@ -341,7 +342,7 @@ protected:
 
   bool _saveHardwareImage(Version &version, TimeStampType &timestamp, SerializedObject &so);
   
-  //HardwareSerializerPtr _hardwareSerializer;
+  HardwareSerializerPtr _hardwareSerializer;
   
   int _quantizationFactor;
   
@@ -352,12 +353,12 @@ protected:
   bool _rollbackCameraProfiles(const Vector<int> &newIDsAdded, const Vector<ConfigurationFile> &oldIDsModified);
     
 public:
-  MainConfigurationFile(const String &name, const String &hardwareID, int quantizationFactor = 4/*, HardwareSerializerPtr hardwareSerializer = nullptr*/): 
-  _currentCameraProfile(nullptr), _defaultCameraProfileID(-1), _defaultCameraProfileIDInHardware(-1), _mainConfigName(name), /*_hardwareSerializer(hardwareSerializer),*/
+  MainConfigurationFile(const String &name, const String &hardwareID, int quantizationFactor = 4, HardwareSerializerPtr hardwareSerializer = nullptr): 
+  _currentCameraProfile(nullptr), _defaultCameraProfileID(-1), _defaultCameraProfileIDInHardware(-1), _mainConfigName(name), _hardwareSerializer(hardwareSerializer),
   _quantizationFactor(quantizationFactor)
   {
-    //if(!hardwareSerializer)
-     // _hardwareSerializer = HardwareSerializerPtr(new HardwareSerializer());
+    if(!hardwareSerializer)
+      _hardwareSerializer = HardwareSerializerPtr(new HardwareSerializer());
   }
   
   void setSerializationQuantizationFactor(int quantizationFactor) { _quantizationFactor = quantizationFactor; }
@@ -367,11 +368,9 @@ public:
   bool readFromHardware();
   bool writeToHardware();
   
-  inline bool hasHardwareConfigurationSupport() { return false;
-    //_hardwareSerializer && *_hardwareSerializer; 
-  }
+  inline bool hasHardwareConfigurationSupport() { return _hardwareSerializer && *_hardwareSerializer; }
   
-  //inline void setHardwareConfigSerializer(const HardwareSerializerPtr &hardwareSerializer) { _hardwareSerializer = hardwareSerializer; }
+  inline void setHardwareConfigSerializer(const HardwareSerializerPtr &hardwareSerializer) { _hardwareSerializer = hardwareSerializer; }
   
   virtual String get(const String &section, const String &name) const;
   virtual bool isPresent(const String &section, const String &name, bool includeParent = true) const;

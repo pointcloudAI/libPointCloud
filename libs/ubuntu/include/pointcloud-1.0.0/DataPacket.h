@@ -17,7 +17,7 @@ namespace PointCloud
   
 struct POINTCLOUD_EXPORT DataPacket
 {
-  char magic[6]; // 
+  char magic[6]; // supposed to be VOXEL
   
   uint8_t type; // PacketType
   
@@ -25,7 +25,7 @@ struct POINTCLOUD_EXPORT DataPacket
   
   SerializedObject object;
   
-  DataPacket() { strcpy(magic, "PTAI"); }
+  DataPacket() { strcpy(magic, "VOXEL"); }
 
   bool readHeader(SerializedObject &in);
   bool readHeader(InputStream &in);

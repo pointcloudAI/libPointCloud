@@ -8,7 +8,6 @@
 #define POINTCLOUD_FRAME_FILTER_SET_H
 
 #include <Filter/Filter.h>
-#include <FrameBuffer.h>
 
 namespace PointCloud
 {

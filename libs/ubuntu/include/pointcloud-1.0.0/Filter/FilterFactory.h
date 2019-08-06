@@ -63,6 +63,7 @@ public:
 typedef Ptr<FilterFactory> FilterFactoryPtr;
 
 #ifndef SWIG
+// Implement this function in support voxel library
 extern "C" void getFilterFactory(FilterFactoryPtr &filterFactory);
 #endif
 

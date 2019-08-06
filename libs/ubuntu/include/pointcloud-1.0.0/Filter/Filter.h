@@ -9,7 +9,7 @@
 
 
 #include <Frame.h>
-//#include <FrameBuffer.h>
+#include <FrameBuffer.h>
 #include <Filter/FilterParameter.h>
 #include <Logger.h>
 

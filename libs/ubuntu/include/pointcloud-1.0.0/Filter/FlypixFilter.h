@@ -1,7 +1,7 @@
 /*
  * PointCloud Lib component.
  *
- * Copyright (c)  PointCloud.AI Inc.
+ * Copyright (c) 2017 Texas Instruments Inc.
  */
 
 #ifndef POINTCLOUD_FLYPIX_H

@@ -7,6 +7,7 @@
 #ifndef POINTCLOUD_FRAME_H
 #define POINTCLOUD_FRAME_H
 
+//#pragma comment( lib,"F:\\workspace\\voxelsdk\\win_build\\lib\\pointcloud.lib")
 #include <Common.h>
 #include <Point.h>
 #include "VideoMode.h"
@@ -409,7 +410,7 @@ public:
 };
 
 
-//typedef ToFRawFrameTemplate<uint16_t, uint8_t>  Uint1608ToFRawFrameTemplate;
+typedef ToFRawFrameTemplate<uint16_t, uint8_t>  Uint1608ToFRawFrameTemplate;
 
 class POINTCLOUD_EXPORT ToFRawIQFrame: public RawFrame
 {
@@ -436,74 +437,70 @@ template <typename ByteType>
 class POINTCLOUD_EXPORT ToFRawIQFrameTemplate : public ToFRawIQFrame
 {
 public:
-	Vector<ByteType> _i;
-	Vector<ByteType> _q;
+  Vector<ByteType> _i;
+  Vector<ByteType> _q;
+  
+  virtual const uint8_t *i() const
+  {
+    return (const uint8_t *)_i.data();
+  }
+  
+  virtual uint8_t *i()
+  {
+    return (uint8_t *)_i.data();
+  }
+  
+  virtual const uint8_t *q() const
+  {
+    return (const uint8_t *)_q.data();
+  }
+  
+  virtual uint8_t *q()
+  {
+    return (uint8_t *)_q.data();
+  }
+  
+  virtual SizeType wordWidth() const
+  {
+    return sizeof(ByteType);
+  }
 
-	virtual const uint8_t *i() const
-	{
-		return (const uint8_t *)_i.data();
-	}
+  virtual Ptr<Frame> copy() const
+  {
+    Ptr<Frame> f(new ToFRawIQFrameTemplate<ByteType>());
+    return copyTo(f);
+  }
 
-	virtual uint8_t *i()
-	{
-		return (uint8_t *)_i.data();
-	}
+  virtual Ptr<Frame> copyTo(Ptr<Frame> &other) const
+  {
+    if(!other || !isSameType(*other))
+      other = Ptr<Frame>(new ToFRawIQFrameTemplate<ByteType>());
 
-	virtual const uint8_t *q() const
-	{
-		return (const uint8_t *)_q.data();
-	}
-
-	virtual uint8_t *q()
-	{
-		return (uint8_t *)_q.data();
-	}
-
-	virtual SizeType wordWidth() const
-	{
-		return sizeof(ByteType);
-	}
-
-	virtual Ptr<Frame> copy() const
-	{
-		Ptr<Frame> f(new ToFRawIQFrameTemplate<ByteType>());
-		return copyTo(f);
-	}
-
-	virtual Ptr<Frame> copyTo(Ptr<Frame> &other) const
-	{
-		if (!other || !isSameType(*other))
-			other = Ptr<Frame>(new ToFRawIQFrameTemplate<ByteType>());
-
-		auto *t = dynamic_cast<ToFRawIQFrameTemplate<ByteType> *>(other.get());
-		t->id = id;
-		t->timestamp = timestamp;
-		t->_i = _i;
-		t->_q = _q;
-		t->size = size;
-		return other;
-	}
-
-	virtual Ptr<Frame> newFrame() const
-	{
-		ToFRawIQFrameTemplate<ByteType> *t = new ToFRawIQFrameTemplate<ByteType>();
-		t->_i.resize(_i.size());
-		t->_q.resize(_q.size());
-		t->size = size;
-		return FramePtr(t);
-	}
-
-	virtual bool isSameType(const Frame &other) const
-	{
-		const ToFRawIQFrameTemplate<ByteType> *f = dynamic_cast<const ToFRawIQFrameTemplate<ByteType> *>(&other);
-		return f;
-	}
-   
-	 int test()
-	{
-		return 100;
-	}
-   static Ptr<ToFRawIQFrameTemplate<ByteType>> typeCast(FramePtr ptr)
+    auto *t = dynamic_cast<ToFRawIQFrameTemplate<ByteType> *>(other.get());
+    t->id = id;
+    t->timestamp = timestamp;
+    t->_i = _i;
+    t->_q = _q;
+    t->size = size;
+    return other;
+  }
+  
+  virtual Ptr<Frame> newFrame() const
+  {
+    ToFRawIQFrameTemplate<ByteType> *t = new ToFRawIQFrameTemplate<ByteType>();
+    t->_i.resize(_i.size());
+    t->_q.resize(_q.size());
+    t->size = size;
+    return FramePtr(t);
+  }
+  
+  virtual bool isSameType(const Frame &other) const
+  {
+    const ToFRawIQFrameTemplate<ByteType> *f = dynamic_cast<const ToFRawIQFrameTemplate<ByteType> *>(&other);
+    return f;
+  }
+  
+  static Ptr<ToFRawIQFrameTemplate<ByteType>> typeCast(FramePtr ptr)
   {
     return std::dynamic_pointer_cast<ToFRawIQFrameTemplate<ByteType>>(ptr);
   }
@@ -569,8 +566,8 @@ public:
 };
 
 
-//typedef ToFRawIQFrameTemplate<int16_t>  Int16ToFRawIQFrameTemplate;
- 
+typedef ToFRawIQFrameTemplate<int16_t>  Int16ToFRawIQFrameTemplate;
+
 class POINTCLOUD_EXPORT RawDataFrame : public RawFrame
 {
 public:
@@ -766,15 +763,37 @@ typedef PointCloudFrameTemplate<Point> XYZPointCloudFrame;
 typedef PointCloudFrameTemplate<IntensityPoint> XYZIPointCloudFrame;
 
 typedef Ptr<XYZPointCloudFrame> XYZPointCloudFramePtr;
+/*
+//template <typename PhaseByteType, typename AmbientByteType>
+template <typename PhaseByteType>
+class POINTCLOUD_EXPORT  ToFRawFrameTemplate1 
+{
+public:
+  Vector<PhaseByteType> points;
+  //PhaseByteType a1_;
+  //AmbientByteType a2_;
+  uint16_t a1_;
+  uint8_t a2_;
+public:
+   ToFRawFrameTemplate1()
+  {
 
-//#if defined(WINDOWS)
-//fixed  error LNK2019 and  error LNK2001 can't find symbol in windows platform
-//coz template class can't export symbol in header file
-template class POINTCLOUD_EXPORT PointCloudFrameTemplate<Point>;
-template class POINTCLOUD_EXPORT PointCloudFrameTemplate<IntensityPoint>;
-template class POINTCLOUD_EXPORT ToFRawFrameTemplate<uint16_t, uint8_t>;
-template class POINTCLOUD_EXPORT ToFRawIQFrameTemplate<int16_t>;
-//#endif
+  }
+  ~ToFRawFrameTemplate1()
+  {
+
+  }
+  void setValue(uint16_t a1,uint8_t a2)
+  {
+    a1_ = a1;
+    a2_ = a2;
+  }
+};
+
+//typedef ToFRawFrameTemplate1<uint16_t, uint8_t>  Uint1608ToFRawFrameTemplate;
+typedef ToFRawFrameTemplate1<Point>  Uint1608ToFRawFrameTemplate;
+//typedef ToFRawFrameTemplate1  Uint1608ToFRawFrameTemplate;
+*/
 /**
  * @}
  */
