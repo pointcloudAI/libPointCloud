@@ -6,7 +6,7 @@ These are packages for using PointCloud.AI depth cameras with ROS.
 The following instructions support ROS Indigo, on **Ubuntu 14.04**, and ROS Kinetic, on **Ubuntu 16.04**.
 
 ### Step 1: Install the latest PointCloud.AI  PointCloudSDK 1.0
-- #### Downlowd from [Ubuntu Package](https://github.com/pointcloudAI/libPointCloud/tree/master/libs/macos) to the location where CMake FindPackage searh path can find it. -
+- #### Downlowd from [Ubuntu Package](hhttps://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to the location where CMake FindPackage searh path can find it. -
 
 #### OR
 
