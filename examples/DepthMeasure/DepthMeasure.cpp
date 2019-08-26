@@ -27,7 +27,7 @@ int main(int argc,char *argv[]) {
     
     std::cout << "Hello, World!\n";
     
-    // logger.setDefaultLogLevel(LOG_DEBUG);
+    logger.setDefaultLogLevel(LOG_DEBUG);
     CameraSystem sys;
    
     DevicePtr     device;
@@ -53,14 +53,14 @@ int main(int argc,char *argv[]) {
       if(depthCamera->getFrameRate(r))
         logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
       r.numerator = 15;
-      depthCamera->setFrameRate(r);
+      // depthCamera->setFrameRate(r);
       // if(depthCamera->getFrameRate(r))
       logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
       
       FrameSize s;
       if(depthCamera->getFrameSize(s))
       logger(LOG_INFO) << " ||| Frame size :  " << s.width << " * "<< s.height << std::endl;
-      int centerPointIndex = (s.width/2 ) * s.height + s.width/2;
+      int centerPointIndex = (s.height/2 ) * s.width + s.width/2;
       // ParameterPtr p;
       // float angle ;
       // depthCamera->getFieldOfView(angle);
@@ -158,40 +158,33 @@ int main(int argc,char *argv[]) {
           return;
         }
         float x = d->depth[centerPointIndex];
-        //memcpy((char *)depthFrame, (char *)d->depth.data(), sizeof(short) * 80 * 60);
-    
-        // uint16_t depth_t=((uint16_t *)d->depth.data())[2430];
         std::cout << " ||| Center Point's depth : " << x << std::endl;
       
       });
-     // depthCamera->registerCallback(DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME , [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType frameType) {
-     //    if(frameType == DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME){
-     //        //const PointCloudFrame *pcf = dynamic_cast<const PointCloudFrame *>(&frame);
-     //        const XYZIPointCloudFrame *pcf = dynamic_cast<const XYZIPointCloudFrame *>(&frame);
+     depthCamera->registerCallback(DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME , [&](DepthCamera &dc, const Frame &frame, DepthCamera::FrameType frameType) {
+        if(frameType == DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME){
+            //const PointCloudFrame *pcf = dynamic_cast<const PointCloudFrame *>(&frame);
+            const XYZIPointCloudFrame *pcf = dynamic_cast<const XYZIPointCloudFrame *>(&frame);
          
-     //        if(!pcf)
-     //        {
-     //          std::cout << "Null frame captured? or not of type PointCloudFrame" << std::endl;
-     //          return;
-     //        }
-     //         std::cout << " PointCloudFrame size :" << pcf->points.size() << std::endl;
+            if(!pcf)
+            {
+              std::cout << "Null frame captured? or not of type PointCloudFrame" << std::endl;
+              return;
+            }
+             std::cout << " PointCloudFrame size :" << pcf->points.size() << std::endl;
            
-     //        if(lastTimeStamp != 0)
-     //           std::cout << " (" << 1E6/(pcf->timestamp - lastTimeStamp) << " fps)";
-     //        lastTimeStamp = pcf->timestamp;
+            if(lastTimeStamp != 0)
+               std::cout << " (" << 1E6/(pcf->timestamp - lastTimeStamp) << " fps)";
+            lastTimeStamp = pcf->timestamp;
 
-     //         IntensityPoint p = pcf->points[centerPointIndex];
-     //        // const XYZIPointCloudFrame *f = dynamic_cast<const XYZIPointCloudFrame *>(&frame);
-     //        // float x = pcf->depth[centerPointIndex];
-     //        //memcpy((char *)depthFrame, (char *)d->depth.data(), sizeof(short) * 80 * 60);
-        
-     //        // uint16_t depth_t=((uint16_t *)d->depth.data())[2430];
-     //         std::cout << " ||| Center Point   x : " << p.x << " y: " << p.y<< " z: "  << p.z  << " i: " << p.i << std::endl;
+             IntensityPoint p = pcf->points[centerPointIndex];
+          
+             std::cout << " ||| Center Point   is nan?  "<< isnan(p.i) << " x: "   << p.x << " y: " << p.y<< " z: "  << p.z  << " i: " << p.i << std::endl;
 
-     //        }
+            }
         
       
-     //  });
+      });
   
     if(depthCamera->start()){
           logger(LOG_INFO) <<  " ||| start camera pass" << std::endl;
