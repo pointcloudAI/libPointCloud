@@ -8,7 +8,6 @@
 #define POINTCLOUD_CONFIGURATION_H
 
 #include "Common.h"
-#include "Serializable.h"
 #include "DataPacket.h"
 #include "HardwareSerializer.h"
 
@@ -353,11 +352,11 @@ protected:
   bool _rollbackCameraProfiles(const Vector<int> &newIDsAdded, const Vector<ConfigurationFile> &oldIDsModified);
     
 public:
-  MainConfigurationFile(const String &name, const String &hardwareID, int quantizationFactor = 4, HardwareSerializerPtr hardwareSerializer = nullptr): 
-  _currentCameraProfile(nullptr), _defaultCameraProfileID(-1), _defaultCameraProfileIDInHardware(-1), _mainConfigName(name), _hardwareSerializer(hardwareSerializer),
+  MainConfigurationFile(const String &name, const String &hardwareID, int quantizationFactor = 4, HardwareSerializerPtr hardwareSerializer = nullptr):
+    _defaultCameraProfileID(-1),_defaultCameraProfileIDInHardware(-1),_currentCameraProfile(nullptr), _mainConfigName(name),_hardwareID(hardwareID), _hardwareSerializer(hardwareSerializer),
   _quantizationFactor(quantizationFactor)
   {
-    if(!hardwareSerializer)
+    if(!_hardwareSerializer)
       _hardwareSerializer = HardwareSerializerPtr(new HardwareSerializer());
   }
   
@@ -366,9 +365,14 @@ public:
   virtual bool read(const String &configFile);
   
   bool readFromHardware();
+  bool ValidateBinFromEEPROM(String serialID = "");
+  bool writeSerialToEEPROM(String serialID = "");
+  bool writeToConfFile(std::string& file);
   bool writeToHardware();
+  bool writeToBinFile(int profileID);
   
-  inline bool hasHardwareConfigurationSupport() { return _hardwareSerializer && *_hardwareSerializer; }
+  inline bool hasHardwareConfigurationSupport() { return _hardwareSerializer && *_hardwareSerializer;
+  }
   
   inline void setHardwareConfigSerializer(const HardwareSerializerPtr &hardwareSerializer) { _hardwareSerializer = hardwareSerializer; }
   
@@ -377,9 +381,9 @@ public:
   
   int addCameraProfile(const String &profileName, const int parentID = -1);
   bool setCurrentCameraProfile(const int id);
-  bool removeAllHardwareCameraProfiles();
+  bool removeAllHardwareCameraProfiles(bool eraseHardware = true);
   bool removeCameraProfile(const int id);
-  bool saveCameraProfileToHardware(int &id, bool saveParents = false, bool setAsDefault = false, const String &namePrefix = "");
+  bool saveCameraProfileToHardware(int &id, bool saveParents = false, bool setAsDefault = false, const String &namePrefix = "",bool updateHardware = true );
   
   ConfigurationFile *getDefaultCameraProfile();
   ConfigurationFile *getCameraProfile(const int id);

@@ -55,7 +55,8 @@ public:
   USBSystem &getUSBSystem();
   
   bool isInitialized();
-  
+  void close();
+    
   virtual ~USBIO() {}
 };
 

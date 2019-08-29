@@ -1162,9 +1162,9 @@
 						</group>
 						<group desc="" name="temp_sensor">
 							<propertyList>
-								<property desc="" name="tsensor" propertyId="300001"/>
+								<!--  <property desc="" name="tsensor" propertyId="300001"/> -->
 								<property desc="" name="tillum_slv_addr" propertyId="300002"/>
-								<property desc="" name="tillum" propertyId="300003"/>
+								<!-- <property desc="" name="tillum" propertyId="300003"/> -->
 								<property desc="" name="tillum_en" propertyId="300004"/>
 							</propertyList>
 						</group>

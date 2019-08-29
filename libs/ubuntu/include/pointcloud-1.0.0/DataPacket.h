@@ -17,7 +17,7 @@ namespace PointCloud
   
 struct POINTCLOUD_EXPORT DataPacket
 {
-  char magic[6]; // supposed to be VOXEL
+  char magic[6]; // 
   
   uint8_t type; // PacketType
   
@@ -25,7 +25,7 @@ struct POINTCLOUD_EXPORT DataPacket
   
   SerializedObject object;
   
-  DataPacket() { strcpy(magic, "VOXEL"); }
+  DataPacket() { strcpy(magic, "PT.AI"); }
 
   bool readHeader(SerializedObject &in);
   bool readHeader(InputStream &in);
@@ -36,7 +36,7 @@ struct POINTCLOUD_EXPORT DataPacket
   bool write(SerializedObject &out);
   bool write(OutputStream &out);
   
-  inline bool verifyMagic() { return magic[0] == 'V' && magic[1] == 'O' && magic[2] == 'X' && magic[3] == 'E' && magic[4] == 'L'; }
+  inline bool verifyMagic() { return magic[0] == 'P' && magic[1] == 'T' && magic[2] == '.' && magic[3] == 'A' && magic[4] == 'I'; }
 };
 
   

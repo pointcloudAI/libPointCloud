@@ -53,7 +53,6 @@ void DepthCameraFactory::_addSupportedDevices(const Vector<DevicePtr> &devices)
 }
 
 
-// Implement this function in every device-specific voxel library
 
 typedef Ptr<DepthCameraFactory> DepthCameraFactoryPtr;
 

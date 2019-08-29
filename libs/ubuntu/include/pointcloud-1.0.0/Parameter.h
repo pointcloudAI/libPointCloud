@@ -188,6 +188,8 @@ typedef ParameterTemplate<int> IntegerParameterTemplate;
 typedef ParameterTemplate<uint> UnsignedIntegerParameterTemplate;
 typedef ParameterTemplate<float> FloatParameterTemplate;
 
+
+
 #ifdef SWIG
 %template(BoolParameterTemplate) ParameterTemplate<bool>;
 %template(IntegerParameterTemplate) ParameterTemplate<int>;
@@ -223,7 +225,6 @@ public:
 
 typedef EnumParameterTemplate<bool> BoolEnumParameterTemplate;
 typedef EnumParameterTemplate<int> IntegerEnumParameterTemplate;
-
 
 #ifdef SWIG
 %template(BoolEnumParameterTemplate) EnumParameterTemplate<bool>;
@@ -411,6 +412,7 @@ public:
 
 typedef RangeParameterTemplate<uint> UnsignedIntegerParameter;
 
+
 class POINTCLOUD_EXPORT FloatParameter : public RangeParameterTemplate<float>
 {
 protected:
@@ -455,6 +457,21 @@ public:
 /**
  * @}
  */
+
+//#if defined(WINDOWS)
+  //fixed  error LNK2019 and  error LNK2001 can't find symbol in windows platform
+  //coz template class can't export symbol in header file
+  template class POINTCLOUD_EXPORT  ParameterTemplate<bool>;
+  template class POINTCLOUD_EXPORT ParameterTemplate<int>;
+  template class POINTCLOUD_EXPORT ParameterTemplate<uint>;
+  template class POINTCLOUD_EXPORT ParameterTemplate<float>;
+  template class POINTCLOUD_EXPORT EnumParameterTemplate<bool>;
+  template class POINTCLOUD_EXPORT EnumParameterTemplate<int>;
+  template class POINTCLOUD_EXPORT RangeParameterTemplate<int>;
+  template class POINTCLOUD_EXPORT RangeParameterTemplate<float>;
+  template class POINTCLOUD_EXPORT RangeParameterTemplate<uint>;
+//#endif
+
 }
 
 #endif // PARAMETER_H

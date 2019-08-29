@@ -9,13 +9,15 @@
 
 #include <Frame.h>
 #include <SerializedObject.h>
-#include <FrameGenerator.h>
 #include "DataPacket.h"
 
 namespace PointCloud
 {
     
     class CameraSystem;
+    class POINTCLOUD_EXPORT FrameGenerator;
+    typedef Ptr<FrameGenerator> FrameGeneratorPtr;
+
     
     struct POINTCLOUD_EXPORT FrameStreamHeader
     {
@@ -103,7 +105,7 @@ namespace PointCloud
         
         CameraSystem &_sys;
         
-        Ptr<FrameGenerator> _frameGenerator[3]; // for processed raw, depth and point cloud
+        FrameGeneratorPtr _frameGenerator[3]; // for processed raw, depth and point cloud
         
         FrameStreamPacket _dataPacket, _configPacket;
         GeneratorConfigurationSubPacket _configSubPacket;
@@ -161,20 +163,10 @@ namespace PointCloud
     
     typedef Ptr<FrameStreamReader> FrameStreamReaderPtr;
     
-    template <typename T>
-    bool FrameStreamReader::getStreamParam(const String &name, T &value) const
-    {
-        if(!_frameGenerator[0]->get(name, value) && !_frameGenerator[1]->get(name, value) && !_frameGenerator[2]->get(name, value))
-        return false;
-        
-        return true;
-    }
-    
-    
     class POINTCLOUD_EXPORT SocketStreamReader
     {
         CameraSystem &_sys;
-        Ptr<FrameGenerator> _frameGenerator[3]; // for processed raw, depth and point cloud
+        FrameGeneratorPtr _frameGenerator[3]; // for processed raw, depth and point cloud
         FrameStreamPacket _dataPacket;
         bool _init();
         uint _id1;
@@ -196,15 +188,6 @@ namespace PointCloud
     };
     
     typedef Ptr<SocketStreamReader> SocketStreamReaderPtr;
-    
-    template <typename T>
-    bool SocketStreamReader::getStreamParam(const String &name, T &value) const
-    {
-        if(!_frameGenerator[0]->get(name, value) && !_frameGenerator[1]->get(name, value) && !_frameGenerator[2]->get(name, value))
-        return false;
-        
-        return true;
-    }
 }
 
 #endif
