@@ -23,7 +23,7 @@ The IMX556 is a fully integrated optical Time-of-Flight (ToF) camera sensor. The
 |- | :-: | 
 |[Dependent library files](https://github.com/pointcloudAI/libPointCloud/tree/master/libs) |We provide SDK for those platforms : Linux \ Mac OS \ Windows \ Android.|
 |[Code Samples](https://github.com/pointcloudAI/libPointCloud/tree/master/examples) | These simple examples demonstrate how to easily use the SDK to include code snippets that access the camera into your applications. Check some of the C++ examples including capture, pointcloud and [gesture recognition](https://github.com/pointcloudAI/libPointCloud/tree/master/examples/DepthGesture).|
-|Tools | [PointCloudTool](https://github.com/pointcloudAI/libPointCloud/tree/master/tools/PointCloudTool) is a visualization tool which is based on the libPointCloud SDK API. |
+|Tools | [PointCloudTool](https://github.com/pointcloudAI/tools_and_resources/tree/master/windows_viewer) is a visualization tool which is based on the libPointCloud SDK API. |
 |Wrappers | [Python](https://github.com/pointcloudAI/libPointCloud/tree/master/wrappers/python) API, [ROS](https://github.com/pointcloudAI/libPointCloud/tree/master/wrappers/pointcloud_ros), OpenCV and more to come |
 
 ## Visualization tool Snapshot
