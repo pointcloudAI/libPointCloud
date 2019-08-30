@@ -24,8 +24,6 @@ BTW. Please remember to amend above PointCloud_DIR to real saved folder of Point
 
 ### Step 3: Install PointCloud ROS from Sources
 
-sudo apt-get install ros-melodic-catkin
-
 - Create a [catkin](http://wiki.ros.org/catkin#Installing_catkin) workspace
 ```bash
 mkdir -p ~/catkin_ws/src
@@ -33,11 +31,11 @@ cd ~/catkin_ws/src/
 ```
 - Clone the latest Poincloud ROS from [here](https://github.com/pointcloudAI/libPointCloud/tree/master/wrappers/) into 'catkin_ws/src/'
 
-The fainl foler structure as as follows:
+The final foler structure is as follows:
 ```bash
 ~/catkin_ws/src/pointcloud_camera
 ```
-And then execute below commands:
+And then execute below commands under ~/catkin_ws/src/:
 ```bash
 catkin_init_workspace
 cd ..
