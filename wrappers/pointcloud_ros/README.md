@@ -5,8 +5,15 @@ These are packages for using PointCloud.AI depth cameras with ROS.
 
 The following instructions support ROS Indigo, on **Ubuntu 14.04**, and ROS Kinetic, on **Ubuntu 16.04**.
 
+PS. This instructions had been confirmed that work well on "ubuntu 18.04" with ROS Melodic.
+For ROS Melodic, please exebute below commands:
+```bash
+sudo apt-get install ros-melodic-catkin
+sudo apt install ros-melodic-ddynamic-reconfigure
+```
+
 ### Step 1: Install the latest PointCloud.AI  PointCloudSDK 1.0
-- #### Downlowd from [Ubuntu Package](hhttps://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to your disk.
+- #### Downlowd from [Ubuntu Package](https://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to your disk.
 
 #### OR
 
