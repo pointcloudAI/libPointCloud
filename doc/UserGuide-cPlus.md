@@ -55,7 +55,7 @@ sys.disconnect(depthCamera,true);
 return 0;
 ```
 
-## 2.  Getter and setter of Main Parameters
+## 2. Getter and setter of Main Parameters
 
 1. Modulation frequency
 2. Integration time 
