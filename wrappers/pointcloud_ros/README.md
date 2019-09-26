@@ -5,17 +5,32 @@ These are packages for using PointCloud.AI depth cameras with ROS.
 
 The following instructions support ROS Indigo, on **Ubuntu 14.04**, and ROS Kinetic, on **Ubuntu 16.04**.
 
+PS. This instructions had been confirmed that work well on "ubuntu 18.04" with ROS Melodic.
+For ROS Melodic, please exebute below commands:
+```bash
+sudo apt-get install ros-melodic-catkin
+sudo apt install ros-melodic-ddynamic-reconfigure
+```
+
 ### Step 1: Install the latest PointCloud.AI  PointCloudSDK 1.0
-- #### Downlowd from [Ubuntu Package](hhttps://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to the location where CMake FindPackage searh path can find it. -
+- #### Downlowd from [Ubuntu Package](https://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to your disk.
 
 #### OR
 
-- #### Download from [MacOS Package](https://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to the location where CMake FindPackage searh path can find it.
+- #### Download from [MacOS Package](https://github.com/pointcloudAI/libPointCloud/tree/master/libs/ubuntu) to your disk.
+
+Add PointCloud_DIR to ~/.bashrc to make CMake FindPackake can find PointCloud :
+```bash
+vim ~/.bashrc
+export PointCloud_DIR='/home/your_ubuntu_login_account/dev/libPointCloud/libs/ubuntu/lib/cmake/PointCloud'
+```
+BTW. Please remember to amend above PointCloud_DIR to real saved folder of PointCloud SDK.
 
 ### Step 2: Install the ROS distribution
 - #### Install [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu), on Ubuntu 16.04
 
 ### Step 3: Install PointCloud ROS from Sources
+
 - Create a [catkin](http://wiki.ros.org/catkin#Installing_catkin) workspace
 ```bash
 mkdir -p ~/catkin_ws/src
@@ -23,6 +38,11 @@ cd ~/catkin_ws/src/
 ```
 - Clone the latest Poincloud ROS from [here](https://github.com/pointcloudAI/libPointCloud/tree/master/wrappers/) into 'catkin_ws/src/'
 
+The final foler structure is as follows:
+```bash
+~/catkin_ws/src/pointcloud_camera
+```
+And then execute below commands under ~/catkin_ws/src/:
 ```bash
 catkin_init_workspace
 cd ..

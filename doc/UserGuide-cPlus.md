@@ -55,7 +55,7 @@ sys.disconnect(depthCamera,true);
 return 0;
 ```
 
-## 2.  Getter and setter of Main Parameters
+## 2. Getter and setter of Main Parameters
 
 1. Modulation frequency
 2. Integration time 
@@ -103,11 +103,14 @@ depthCamera->setFrameRate(r);
 if(depthCamera->getFrameRate(r))
     logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
 ```
-### Resolution Getter 
+### Resolution Getter & Setter
 ```
 #get framesize/resolution
-r0,frameSize = depthCamera.getFrameSize()
-print(" ||| resolution: %d x %d" %(frameSize.width,frameSize.height))
+FrameSize s;
+depthCamera->getFrameSize(s)
+s.height = 240
+s.width = 320
+depthCamera->setFrameSize(s)
 ```
 ## 3.  Frame call back 
 Valid frame types are:
