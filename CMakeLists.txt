@@ -50,7 +50,30 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   )
   set(PointCloud ./libs/macos/lib)
   message("use PointCloud SDK ./libs/macos/lib")
+ELSEIF(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+  
+  SET(WINDOWS 1)
+  set(PointCloud ./libs/windows/lib)
 
+  add_definitions(/fp:fast /W0 /bigobj /arch:AVX2 )
+  ADD_DEFINITIONS(-DWINDOWS -DEnableCyAPI /wd4251  -DDLIB_HAVE_AVX2)
+  set(COMMON_INCLUDE
+    ${COMMON_INCLUDE}
+    ./libs/windows/include/pointcloud-1.0.0/
+    ${CMAKE_SOURCE_DIR}/3party/windows/libusb1.0.0/include
+    Util/
+    )
+
+  if(NOT MSVC_VERSION GREATER 1800)
+    SET(COMMON_LIBS setupapi strmiids strmbase Cfgmgr32 Version)
+  else()
+    SET(COMMON_LIBS setupapi strmiids strmbase Cfgmgr32 Version legacy_stdio_definitions)
+  endif()
+
+  
+   
+  
+  
 else()
   message(FATAL_ERROR "This project not support platform:${CMAKE_SYSTEM_NAME}")
 endif()
@@ -74,6 +97,6 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 set(CPACK_PACKAGE_VENDOR "pointcloud.ai")
 set(CPACK_SOURCE_GENERATOR "Developer")
 
-#add_subdirectory(examples/DepthGesture)
-add_subdirectory(examples/DepthMeasure)
-add_subdirectory(examples/DepthAscii)
+add_subdirectory(examples/ExtractRawData)
+#add_subdirectory(examples/DepthMeasure)
+#add_subdirectory(examples/DepthAscii)

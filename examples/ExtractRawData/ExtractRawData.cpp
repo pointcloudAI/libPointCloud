@@ -12,13 +12,15 @@ using namespace PointCloud;
 #include <stdio.h>
 #include <string.h>
 #include "CameraSystem.h"
+#if defined(LINUX) 
 #include <sys/wait.h>
+#endif
 #include <iostream>
 #include <fstream>
 #include <complex>
 
-#include "opencv2/opencv.hpp"
-#include "opencv/cv.h"
+//#include "opencv2/opencv.hpp"
+//#include "opencv/cv.h"
  
 using namespace std;
 
@@ -64,12 +66,12 @@ void rawABdataCallback(DepthCamera &dc, const Frame &frame, DepthCamera::FrameTy
     Complex c;
     float factor = 255.0/1024;
     // std::cout << " factor : " << factor << std::endl;
-    cv::Mat tof_amplitude=cv::Mat::zeros(height,width,CV_8UC1);
-    unsigned char *pamp = tof_amplitude.data; 
+   // cv::Mat tof_amplitude=cv::Mat::zeros(height,width,CV_8UC1);
+    //unsigned char *pamp = tof_amplitude.data; 
 
     char filename[50] = { 0 };
     sprintf(filename, "RawDataAMP_%llu.bmp", rawDataFrame->timestamp);
-                 
+                 /*
     for(int j = 0;j< width*height;j+=2)
     {
         // calculate two pixel at the same time  
@@ -120,7 +122,10 @@ void rawABdataCallback(DepthCamera &dc, const Frame &frame, DepthCamera::FrameTy
         index += 3;
     }
     cv::imwrite(filename,tof_amplitude);
+
+	*/
     std::cout << "Write amplitude to file with name " << filename << std::endl;
+	
 
 }
 
@@ -130,51 +135,52 @@ int main(int argc,char *argv[]) {
 
     _sineTable.resize(phase_count);
     _cosineTable.resize(phase_count);
+	//logger.setDefaultLogLevel(LOG_DEBUG);
 
      for(auto i = 0; i < phase_count; i++)
     {
         _sineTable[i] = sin(2*M_PI/phase_count*i);
         _cosineTable[i] = cos(2*M_PI/phase_count*i);
-        logger(LOG_DEBUG) << "table @" << i << " = " << _sineTable[i] << ", " << _cosineTable[i] << std::endl;
+        std::cout << "table @" << i << " = " << _sineTable[i] << ", " << _cosineTable[i] << std::endl;
     }
     
-    logger.setDefaultLogLevel(LOG_DEBUG);
+    
     CameraSystem sys;
    
     DevicePtr     device;
     const Vector<DevicePtr> &devices = sys.scan();
     bool found = false;
     for (auto &d: devices){
-        logger(LOG_INFO) <<  " ||| Detected devices: "  << d->id() << std::endl;
+		std::cout <<  " ||| Detected devices: "  << d->id() << std::endl;
         device = d;
         found = true;
     }
     if (!found){
-      logger(LOG_INFO) <<  " ||| No device found "  << std::endl;
+		std::cout <<  " ||| No device found "  << std::endl;
       return 0;
     }
     DepthCameraPtr depthCamera;
     depthCamera = sys.connect(device);
     if (!depthCamera) {
-        logger(LOG_ERROR) << " ||| Could not load depth camera for device "<< device->id() << std::endl;
+		std::cout << " ||| Could not load depth camera for device "<< device->id() << std::endl;
         return 1;
     }
 
     FrameRate r;
     if(depthCamera->getFrameRate(r))
-      logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
+		std::cout << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
     r.numerator = 3;
     depthCamera->setFrameRate(r);
     if(depthCamera->getFrameRate(r))
-      logger(LOG_INFO) << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
+		std::cout << " ||| Capturing at a frame rate of " << r.getFrameRate() << " fps" << std::endl;
       
     FrameSize s;
     if(depthCamera->getFrameSize(s))
-    logger(LOG_INFO) << " ||| Frame size :  " << s.width << " * "<< s.height << std::endl;
+		std::cout << " ||| Frame size :  " << s.width << " * "<< s.height << std::endl;
     int centerPointIndex = (s.height/2 ) * s.width + s.width/2;
     
     if (!depthCamera->isInitialized()) {
-        logger(LOG_ERROR) << " ||| Depth camera not initialized for device "<< device->id() << std::endl;
+		std::cout << " ||| Depth camera not initialized for device "<< device->id() << std::endl;
         return 1;
     }
     std::cout << " ||| Successfully loaded depth camera for device " << std::endl;
