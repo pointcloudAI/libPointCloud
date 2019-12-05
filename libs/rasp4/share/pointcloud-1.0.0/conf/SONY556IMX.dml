@@ -1,0 +1,1351 @@
+<?xml version="1.0" ?>
+<RegMap bankSeed="3" miscAttrSeed="1" name="SonyIMX556" propertySeed="1409" propertyViewSeed="1" version="1.0" wordLength="32">
+	<propertyViewList>
+		<propertyView id="0" name="Internal">
+			<propertyList>
+				<property aid_0="0" default="0" desc="0:hold release 1:hold" function="" fuseId="-1" id="2580" max="1" min="0" readonly="0" reverseFunction="" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="258" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="release" value="0"/>
+						<value desc="" meaning="hold" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="0:Slave Mode 1:Master Mode" function="" fuseId="-1" id="82240" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="8224" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="Slave Mode" value="0"/>
+						<value desc="" meaning="Master Mode" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="7690" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="769" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="7700" max="127" min="0" readonly="0" signed="0" strobe="0" totalBits="7" units="">
+					<rangeList>
+						<range address="770" bankId="0" lsb="0" msb="6"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="7710" max="127" min="0" readonly="0" signed="0" strobe="0" totalBits="7" units="">
+					<rangeList>
+						<range address="771" bankId="0" lsb="0" msb="6"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="7720" max="127" min="0" readonly="0" signed="0" strobe="0" totalBits="7" units="">
+					<rangeList>
+						<range address="772" bankId="0" lsb="0" msb="6"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="7730" max="127" min="0" readonly="0" signed="0" strobe="0" totalBits="7" units="">
+					<rangeList>
+						<range address="773" bankId="0" lsb="0" msb="6"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="84480" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="8448" bankId="0" lsb="3" msb="3"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="false" value="0"/>
+						<value desc="" meaning="true" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="84481" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="8448" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="false" value="0"/>
+						<value desc="" meaning="true" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="0:Normal 1:Reverse" function="" fuseId="-1" id="20600" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="2060" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="Normal" value="0"/>
+						<value desc="" meaning="Reverse" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="0:Normal 1:Reverse" function="" fuseId="-1" id="20610" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="2061" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="Normal" value="0"/>
+						<value desc="" meaning="Reverse" value="1"/>
+					</valueList>
+				</property>
+
+				<property aid_0="0" default="0" desc="H start address (pix)" function="" fuseId="-1" id="20520" max="16383" min="0" readonly="0" signed="0" strobe="0" totalBits="14" units="">
+					<rangeList>
+						<range address="2052" bankId="0" lsb="0" msb="13"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="H width (pix)" function="" fuseId="-1" id="20540" max="1023" min="0" readonly="0" signed="0" strobe="0" totalBits="10" units="">
+					<rangeList>
+						<range address="2054" bankId="0" lsb="0" msb="9"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="V start address (2line)" function="" fuseId="-1" id="20560" max="511" min="0" readonly="0" signed="0" strobe="0" totalBits="9" units="">
+					<rangeList>
+						<range address="2056" bankId="0" lsb="0" msb="8"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				<property aid_0="0" default="0" desc="V end address (2line)" function="" fuseId="-1" id="20580" max="511" min="0" readonly="0" signed="0" strobe="0" totalBits="9" units="">
+					<rangeList>
+						<range address="2058" bankId="0" lsb="0" msb="8"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="1H duration (clk)" function="" fuseId="-1" id="20480" max="16383" min="0" readonly="0" signed="0" strobe="0" totalBits="13" units="">
+					<rangeList>
+						<range address="2048" bankId="0" lsb="0" msb="12"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="20880" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="2088" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="Output Data Rate [Mbps]" function="" fuseId="-1" id="41080" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="4108" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="Output Data Rate [Mbps]" function="" fuseId="-1" id="41090" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4109" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="Output Data Rate [Mbps]" function="" fuseId="-1" id="41100" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4110" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="Output Data Rate [Mbps]" function="" fuseId="-1" id="41110" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4111" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="41120" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="4112" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="52850" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="5285" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51710" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="5171" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="low" value="0"/>
+						<value desc="" meaning="high" value="1"/>
+					</valueList>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="53070" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="5307" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="false" value="0"/>
+						<value desc="" meaning="true" value="1"/>
+					</valueList>
+				</property>
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51200" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="5120" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="false" value="0"/>
+						<value desc="" meaning="true" value="1"/>
+					</valueList>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51230" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="5123" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51720" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5172" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51740" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5174" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51760" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5176" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51780" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5178" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51800" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5180" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51820" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5182" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51840" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5184" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51860" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5186" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51920" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5192" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51940" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5194" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51960" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5196" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="51980" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5198" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="52000" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5200" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="52020" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5202" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="52040" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5204" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+				<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="52060" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="5206" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+				</property>
+				
+			<property aid_0="0" default="0" desc="start-up pre time of each frame = DPTH_SU_NUM_WAIT_A * HMAX" function="" fuseId="-1" id="86600" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8660" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+				</property>
+			
+			<property aid_0="0" default="0" desc="Start Up period = DPTH_SU_NUM * HMAX" function="" fuseId="-1" id="164000" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="16400" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="MICR_LNUM * HMAX" function="" fuseId="-1" id="84560" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8456" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+
+			<property aid_0="0" default="0" desc="" function="" fuseId="-1" id="86800" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="8680" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="SUB_RSEQ_LNUM * HMAX" function="" fuseId="-1" id="164050" max="8191" min="0" readonly="0" signed="0" strobe="0" totalBits="13" units="">
+					<rangeList>
+						<range address="16405" bankId="0" lsb="0" msb="12"/>
+					</rangeList>
+					<valueList/>
+				</property>
+			<property aid_0="0" default="0" desc="SUB_RSEQ_LNUM * HMAX" function="" fuseId="-1" id="164060" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="16406" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="V-Blanking for phase0" function="" fuseId="-1" id="86480" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8648" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase1" function="" fuseId="-1" id="86490" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8649" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase2" function="" fuseId="-1" id="86500" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8650" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase3" function="" fuseId="-1" id="86510" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8651" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase4" function="" fuseId="-1" id="86520" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8652" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase5" function="" fuseId="-1" id="86530" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8653" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase6" function="" fuseId="-1" id="86540" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8654" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="V-Blanking for phase7" function="" fuseId="-1" id="86550" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8655" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase2" function="" fuseId="-1" id="86280" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8628" bankId="0" lsb="4" msb="6"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase1" function="" fuseId="-1" id="86281" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8628" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase4" function="" fuseId="-1" id="86290" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8629" bankId="0" lsb="4" msb="6"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase3" function="" fuseId="-1" id="86291" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8629" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase6" function="" fuseId="-1" id="86300" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8630" bankId="0" lsb="4" msb="6"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase5" function="" fuseId="-1" id="86301" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8630" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase8" function="" fuseId="-1" id="86310" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8631" bankId="0" lsb="4" msb="6"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="360 [deg] x GDPHS / 8 for phase7" function="" fuseId="-1" id="86311" max="8" min="0" readonly="0" signed="0" strobe="0" totalBits="3" units="">
+					<rangeList>
+						<range address="8631" bankId="0" lsb="0" msb="2"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase0" function="" fuseId="-1" id="84800" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8480" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase1" function="" fuseId="-1" id="84840" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8484" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase2" function="" fuseId="-1" id="84880" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8488" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase3" function="" fuseId="-1" id="84920" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8492" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase4" function="" fuseId="-1" id="84960" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8496" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase5" function="" fuseId="-1" id="85000" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8500" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase6" function="" fuseId="-1" id="85040" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8504" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time (clk@120MHz) for phase7" function="" fuseId="-1" id="85080" max="2400000" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8508" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Integration time repeat phases for phase0 pahse1" function="" fuseId="-1" id="86080" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8608" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time repeat phases for phase2 pahse3" function="" fuseId="-1" id="86090" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8609" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time repeat phases for phase4 pahse5" function="" fuseId="-1" id="86100" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8610" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Integration time repeat phases for phase6 pahse7" function="" fuseId="-1" id="86110" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8611" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase0" function="" fuseId="-1" id="85440" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8544" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase1" function="" fuseId="-1" id="85480" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8548" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase2" function="" fuseId="-1" id="85520" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8552" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase3" function="" fuseId="-1" id="85560" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8556" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase4" function="" fuseId="-1" id="85600" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8560" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase5" function="" fuseId="-1" id="85640" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8564" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase6" function="" fuseId="-1" id="85680" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8568" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Integration time >1ms enable phase7" function="" fuseId="-1" id="85720" max="4294967295" min="0" readonly="0" signed="0" strobe="0" totalBits="32" units="">
+					<rangeList>
+						<range address="8572" bankId="0" lsb="0" msb="31"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="setting (GDA) for phase4" function="" fuseId="-1" id="86160" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8616" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase3" function="" fuseId="-1" id="86161" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8616" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase2" function="" fuseId="-1" id="86162" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8616" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase1" function="" fuseId="-1" id="86163" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8616" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase8" function="" fuseId="-1" id="86170" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8617" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase7" function="" fuseId="-1" id="86171" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8617" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase6" function="" fuseId="-1" id="86172" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8617" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDA) for phase5" function="" fuseId="-1" id="86173" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8617" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+
+			<property aid_0="0" default="0" desc="setting (GDB) for phase4" function="" fuseId="-1" id="86200" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8620" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDB) for phase3" function="" fuseId="-1" id="86201" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8620" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDb) for phase2" function="" fuseId="-1" id="86202" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8620" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDB) for phase1" function="" fuseId="-1" id="86203" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8620" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+
+			<property aid_0="0" default="0" desc="setting (GDB) for phase8" function="" fuseId="-1" id="86210" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8621" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDB) for phase7" function="" fuseId="-1" id="86211" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8621" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDB) for phase6" function="" fuseId="-1" id="86212" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8621" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (GDB) for phase5" function="" fuseId="-1" id="86213" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8621" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+
+
+			<property aid_0="0" default="0" desc="setting (Laser) for phase4" function="" fuseId="-1" id="86240" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8624" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase3" function="" fuseId="-1" id="86241" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8624" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase2" function="" fuseId="-1" id="86242" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8624" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase1" function="" fuseId="-1" id="86243" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8624" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase8" function="" fuseId="-1" id="86250" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8625" bankId="0" lsb="6" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase7" function="" fuseId="-1" id="86251" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8625" bankId="0" lsb="4" msb="5"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase6" function="" fuseId="-1" id="86252" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8625" bankId="0" lsb="2" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="setting (Laser) for phase5" function="" fuseId="-1" id="86253" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8625" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+
+			<property aid_0="0" default="0" desc="External clock frequency [MHz]" function="" fuseId="-1" id="41020" max="65536" min="0" readonly="0" signed="0" strobe="0" totalBits="16" units="">
+					<rangeList>
+						<range address="4102" bankId="0" lsb="0" msb="15"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="External clock frequency [MHz]" function="" fuseId="-1" id="41030" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4103" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="PL_RC_VT" function="" fuseId="-1" id="41620" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="4162" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="PL_RC_OP" function="" fuseId="-1" id="41660" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="4166" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="PL_FC_MX" function="" fuseId="-1" id="41680" max="2047" min="0" readonly="0" signed="0" strobe="0" totalBits="11" units="">
+					<rangeList>
+						<range address="4168" bankId="0" lsb="0" msb="10"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			
+			<property aid_0="0" default="0" desc="PL_RC_MX" function="" fuseId="-1" id="41700" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="4170" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="PL_RES_MX" function="" fuseId="-1" id="41710" max="4" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="4171" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="DIVSELPRE" function="" fuseId="-1" id="86380" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="8638" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="DIVSEL" function="" fuseId="-1" id="86390" max="2" min="0" readonly="0" signed="0" strobe="0" totalBits="2" units="">
+					<rangeList>
+						<range address="8639" bankId="0" lsb="0" msb="1"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="DLYCNT" function="" fuseId="-1" id="82200" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8220" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="ANADLYCNT" function="" fuseId="-1" id="82210" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="8221" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="dlycntsf" function="" fuseId="-1" id="82220" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="8222" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="STANDBY" function="" fuseId="-1" id="40960" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="4096" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="off" value="0"/>
+						<value desc="" meaning="on" value="1"/>
+					</valueList>
+			</property>
+
+			<property aid_0="0" default="0" desc="MODE_SEL" function="" fuseId="-1" id="40970" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+					<rangeList>
+						<range address="4097" bankId="0" lsb="0" msb="0"/>
+					</rangeList>
+					<valueList>
+						<value desc="" meaning="false" value="0"/>
+						<value desc="" meaning="true" value="1"/>
+					</valueList>
+			</property>
+
+			<property aid_0="0" default="0" desc="EBD_X_OUT_SIZE" function="" fuseId="-1" id="112770" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="11277" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="TESTSEL1" function="" fuseId="-1" id="120370" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="12037" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="TESTMNT1" function="" fuseId="-1" id="120380" max="4095" min="0" readonly="0" signed="0" strobe="0" totalBits="12" units="">
+					<rangeList>
+						<range address="12038" bankId="0" lsb="0" msb="11"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="outif_xvs" function="" fuseId="-1" id="124010" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="12401" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="TPLLTESTDIV_MX" function="" fuseId="-1" id="43040" max="16" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+					<rangeList>
+						<range address="4304" bankId="0" lsb="0" msb="3"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="TPLLTESTOFFSET_MX" function="" fuseId="-1" id="43070" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4307" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="tplltestlo_mx" function="" fuseId="-1" id="43090" max="256" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+					<rangeList>
+						<range address="4309" bankId="0" lsb="0" msb="7"/>
+					</rangeList>
+					<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="PULSE_TIMING1" function="" fuseId="-1" id="211210" max="4194303" min="0" readonly="0" signed="0" strobe="0" totalBits="22" units="">
+					<rangeList>
+						<range address="21121" bankId="0" lsb="0" msb="21"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="PULSE_TIMING2" function="" fuseId="-1" id="211250" max="16777215" min="0" readonly="0" signed="0" strobe="0" totalBits="24" units="">
+					<rangeList>
+						<range address="21125" bankId="0" lsb="0" msb="23"/>
+					</rangeList>
+					<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Phase correction for base frame. This value is added to the obtained phase." function="" fuseId="-1" id="100001" max="2047" min="-2048" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+					<rangeList>
+						<range address="0" bankId="0" lsb="0" msb="12"/>
+					</rangeList>
+					<valueList/>
+				</property>
+			<property aid_0="0" default="0" desc="Phase correction for supplementary frame. This value is added to the obtained phase." function="" fuseId="-1" id="100002" max="2047" min="-2048" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="0" default="0" desc="Disables phase offset correction when set to '1'." function="" fuseId="-1" id="100003" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="0"/>
+				</rangeList>
+				<valueList>
+					<value desc="" meaning="disable" value="0"/>
+					<value desc="" meaning="enable" value="1"/>
+				</valueList>
+			</property>
+			<property aid_0="" default="0" desc="Disables temperature calibration of phase when set to '1'." function="" fuseId="-1" id="100004" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="0"/>
+				</rangeList>
+				<valueList>
+					<value desc="" meaning="disable" value="0"/>
+					<value desc="" meaning="enable" value="1"/>
+				</valueList>
+			</property>
+			<property aid_0="" default="0" desc="phase correction$= phase_offset + coeff_illum*(tillum-tillum_calib) + coeff_sensor*(tsensor-tsensor_calib)$$phase correction is added to the phase output." function="" fuseId="-1" id="100005" max="65535" min="-65536" readonly="0" signed="1" strobe="0" totalBits="16" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="15"/>
+				</rangeList>
+			</property>
+			<property aid_0="0" default="0" desc="phase correction$= phase_offset + coeff_illum*(tillum-tillum_calib) + coeff_sensor*(tsensor-tsensor_calib)$$phase correction is added to the phase output." function="" fuseId="-1" id="100006" max="65535" min="-65536" readonly="0" signed="1" strobe="0" totalBits="16" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="15"/>
+				</rangeList>
+				<valueList/>
+				</property>
+			<property aid_0="" default="0" desc="phase correction$= phase_offset + coeff_illum*(tillum-tillum_calib) + coeff_sensor*(tsensor-tsensor_calib)$$phase correction is added to the phase output." function="" fuseId="-1" id="100007" max="255" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="7"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="0" desc="phase correction$= phase_offset + coeff_illum*(tillum-tillum_calib) + coeff_sensor*(tsensor-tsensor_calib)$$phase correction is added to the phase output." function="" fuseId="-1" id="100008" max="255" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="7"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="0" default="8" desc="Adjusts the precision of temperature correction. Coefficients are scaled by calib_prec.$$internal coeff = (programmed coeff &lt;&lt; (calib_prec-8))" function="" fuseId="-1" id="100009" max="15" min="0" readonly="0" signed="0" strobe="0" totalBits="4" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="3"/>
+				</rangeList>
+				<valueList/>
+			</property>
+
+			<property aid_0="0" default="0" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200001" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="128" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200002" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="0" default="256" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200003" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="384" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200004" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="512" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200005" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="640" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200006" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="768" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200007" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="896" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200008" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="1024" desc="Phase non linearity correction coefficient" function="" fuseId="-1" id="200009" max="4095" min="-4096" readonly="0" signed="1" strobe="0" totalBits="13" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="12"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="0" desc="Disables phase non-linearity correction whe set to '1'." function="" fuseId="-1" id="200010" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="0"/>
+				</rangeList>
+				<valueList>
+					<value desc="" meaning="disable" value="0"/>
+					<value desc="" meaning="enable" value="1"/>
+				</valueList>
+			</property>
+			<property aid_0="" default="0" desc="Represents the repetition period of non-linearity. The 8 LUT values are spread over this period. The remaining periods in 360 degrees are a repeat of this period." function="" fuseId="-1" id="200011" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="0"/>
+				</rangeList>
+				<valueList>
+					<value desc="" meaning="90" value="0"/>
+					<value desc="" meaning="180" value="1"/>
+				</valueList>
+			</property>
+			<property aid_0="" default="0" desc="Temperature output from Sony's built-in temp sensor" function="" fuseId="-1" id="300001" max="255" min="0" readonly="0" signed="1" strobe="0" totalBits="8" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="7"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="0" desc="External temperature sensor's 8-bit slave read address. This temperature sensor is assumed to be near the ToF illumination driver for calibration.$$tillum_slv_addr = (8-bit slave_addr | 1)" function="" fuseId="-1" id="300002" max="255" min="0" readonly="0" signed="0" strobe="0" totalBits="8" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="8" msb="15"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="0" desc="Temperature output from temp sensor with 8-bit slave read address = (tillum_slv_addr | 1)" function="" fuseId="-1" id="300003" max="127" min="-128" readonly="0" signed="1" strobe="0" totalBits="8" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="0" msb="7"/>
+				</rangeList>
+				<valueList/>
+			</property>
+			<property aid_0="" default="0" desc="Enable I2C transactions for reading from the external temperature sensor." function="" fuseId="-1" id="300004" max="1" min="0" readonly="0" signed="0" strobe="0" totalBits="1" units="">
+				<rangeList>
+					<range address="0" bankId="0" lsb="16" msb="16"/>
+				</rangeList>
+				<valueList/>
+			</property>
+		</propertyList>
+			
+	</propertyView>
+	</propertyViewList>
+	<guiViewList>
+		<guiView desc="" master="1" name="Master" propertyViewId="0">
+			<sectionList>
+			    <section desc="" name="startup_setting">
+					<groupList>
+						<group desc="" name="global_ctrl">
+							<propertyList>
+								<property desc="Grouped Parameter Hold Setting within the same frame" name="grp_param_hold" propertyId="2580"/>
+								<property desc="Slave/Master Mode 0/1" name="tmaster" propertyId="82240"/>
+							</propertyList>
+						</group>
+						<group desc="" name="i2c_slaver">
+							<propertyList>
+								<property desc="OPT address" name="iic_slave_adr_sel" propertyId="7690"/>
+								<property desc="OPT address" name="iic_slave_adr0" propertyId="7700"/>
+								<property desc="OPT address" name="iic_slave_adr1" propertyId="7710"/>
+								<property desc="OPT address" name="iic_slave_adr2" propertyId="7720"/>
+								<property desc="OPT address" name="iic_slave_adr3" propertyId="7730"/>
+							</propertyList>
+						</group>
+						<group desc="" name="i2c_master">
+							<propertyList>
+								<property desc="Repeat Setting in Master Mode" name="dpthmap_rep" propertyId="84480"/>
+								<property desc="Restart trigger in Master mode" name="mst_trig" propertyId="84481"/>
+							</propertyList>
+						</group>
+						<group desc="" name="external_clock_setting">
+							<propertyList>
+								<property desc="External clock frequency [MHz]" name="exck_freq" propertyId="41020"/>
+							</propertyList>
+						</group>	
+					</groupList>
+				</section>
+				<section desc="" name="global_setting">
+					<groupList>
+						<group desc="" name="chip_setting_group">
+							<propertyList>
+								<property desc="Chip Standby - Off" name="standby" propertyId="40960"/>
+								<property desc="1H duration (clk)" name="hmax" propertyId="20480"/>
+								<property desc="DUTOF_MODE 4:Raw Tap-A and Tap-B" name="dutof_mode" propertyId="20880"/>
+							</propertyList>
+						</group>
+						<group desc="" name="statistics_group">
+							<propertyList>
+								<property desc="Low threshold of pixel values (phase0)" name="lowthr0" propertyId="51720"/>
+								<property desc="Low threshold of pixel values (phase1)" name="lowthr1" propertyId="51740"/>
+								<property desc="Low threshold of pixel values (phase2)" name="lowthr2" propertyId="51760"/>
+								<property desc="Low threshold of pixel values (phase3)" name="lowthr3" propertyId="51780"/>
+								<property desc="Low threshold of pixel values (phase4)" name="lowthr4" propertyId="51800"/>
+								<property desc="Low threshold of pixel values (phase5)" name="lowthr5" propertyId="51820"/>
+								<property desc="Low threshold of pixel values (phase6)" name="lowthr6" propertyId="51840"/>
+								<property desc="Low threshold of pixel values (phase7)" name="lowthr7" propertyId="51860"/>
+								<property desc="HIGHT threshold of pixel values (phase0)" name="highthr0" propertyId="51920"/>
+								<property desc="HIGHT threshold of pixel values (phase1)" name="highthr1" propertyId="51940"/>
+								<property desc="HIGHT threshold of pixel values (phase2)" name="highthr2" propertyId="51960"/>
+								<property desc="HIGHT threshold of pixel values (phase3)" name="highthr3" propertyId="51980"/>
+								<property desc="HIGHT threshold of pixel values (phase4)" name="highthr4" propertyId="52000"/>
+								<property desc="HIGHT threshold of pixel values (phase5)" name="highthr5" propertyId="52020"/>
+								<property desc="HIGHT threshold of pixel values (phase6)" name="highthr6" propertyId="52040"/>
+								<property desc="HIGHT threshold of pixel values (phase7)" name="highthr7" propertyId="52060"/>
+							</propertyList>
+						</group>
+						<group desc="" name="delay_adjustment_group">
+							<propertyList>
+								<property desc="coarse delay" name="dlycnt" propertyId="82200"/>
+								<property desc="fine delay" name="anadlycnt" propertyId="82210"/>
+								<property desc="super fine delay" name="dlycntsf" propertyId="82220"/>
+							</propertyList>
+						</group>
+						<group desc="" name="readout_group">
+							<propertyList>
+								<property desc="Pixel number of H direction for outputting the EBD " name="ebd_x_out_size" propertyId="112770"/>
+								<property desc="Monitor signal select XVS output setting from XVS pin for Master mode " name="testsel1" propertyId="120370"/>
+								<property desc="Monitor signal select XVS output setting from XVS pin for Master mode " name="testmnt1" propertyId="120380"/>
+								<property desc="Input or Output select for XVS port select XVS output setting from XVS pin for Master mode " name="outif_xvs" propertyId="124010"/>
+								<property desc="Start Up Pre time = DPTH_SU_NUM * HMAX" name="dpth_su_num_wait_a" propertyId="86600"/>
+							</propertyList>
+						</group>
+						<group desc="" name="initial_setting1_group">
+							<propertyList>
+								<property desc="Line count of Reset Sequence= SUB_RSEQ_LNUM * HMAX" name="sub_rseq_lnum" propertyId="164050"/>	
+							</propertyList>
+						</group>
+						
+					</groupList>
+				</section>
+				<section desc="" name="mode_setting">
+					<groupList>
+						<group desc="" name="ROI">
+							<propertyList>
+								<property desc="H start address (pix)" name="hcrop_sta" propertyId="20520"/>
+								<property desc="Horizontal width" name="hcrop_wid" propertyId="20540"/>
+								<property desc="V start address (2line)" name="y_add_sta" propertyId="20560"/>
+								<property desc="V end address (2line)" name="y_add_end" propertyId="20580"/>
+							</propertyList>
+						</group>
+						<group desc="" name="flip_phase">
+							<propertyList>
+								<property desc="Image orientation for Vertical direction" name="img_orientation_v" propertyId="20600"/>
+								<property desc="Image orientation for Horizontal direction" name="img_orientation_h" propertyId="20610"/>
+							</propertyList>
+						</group>
+						<group desc="" name="readout">
+								<propertyList>
+									<property desc="the number of lanes" name="csi_lane_mode" propertyId="41120"/>
+									<property desc="Binning mode is available for Full" name="binning_mode" propertyId="52850"/>
+									<property desc="total time length of all Phases" name="sub_fnum" propertyId="86800"/>
+								</propertyList>
+						</group>
+						<group desc="" name="phase_angle_differences">
+								<propertyList>
+									<property desc="360 [deg] x GDPHS / 8 for phase2" name="gdphs1" propertyId="86280"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase1" name="gdphs0" propertyId="86281"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase4" name="gdphs3" propertyId="86290"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase3" name="gdphs2" propertyId="86291"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase6" name="gdphs5" propertyId="86300"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase5" name="gdphs4" propertyId="86301"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase8" name="gdphs7" propertyId="86310"/>
+									<property desc="360 [deg] x GDPHS / 8 for phase7" name="gdphs6" propertyId="86311"/>
+								</propertyList>
+						</group>
+						<group desc="" name="fmod_group">
+							<propertyList>
+								<property desc="PLL settings" name="pl_rc_vt" propertyId="41620"/>
+								<property desc="PLL settings" name="pl_rc_op" propertyId="41660"/>
+								<property desc="PLL settings" name="pl_fc_mx" propertyId="41680"/>
+								<property desc="PLL settings" name="pl_rc_mx" propertyId="41700"/>
+								<property desc="PLL settings" name="pl_res_mx" propertyId="41710"/>
+								<property desc="MIX divider settings" name="divselpre" propertyId="86380"/>
+								<property desc="MIX divider settings" name="divsel" propertyId="86390"/>
+								<property desc="FMOD setting for BIST" name="tplltestdiv_mx" propertyId="43040"/>
+								<property desc="FMOD setting for BIST" name="tplltestoffset_mx" propertyId="43070"/>
+								<property desc="FMOD setting for BIST" name="tplltestlo_mx" propertyId="43090"/>
+							</propertyList>
+						</group>	
+						<group desc="" name="frame_setting_group">
+							<propertyList>	
+								<property desc="Start Up period" name="dpth_su_num" propertyId="164000"/>
+								<property desc="Mipi Output Data Rate [Mbps]" name="requested_link_bit_rate_mbps" propertyId="41080"/>
+							</propertyList>
+						</group>	
+						<group desc="" name="internal_drive_setting">
+							<propertyList>	
+								<property desc="Internal drive setting" name="pulse_timing1" propertyId="211210"/>
+								<property desc="Internal drive setting" name="pulse_timing2" propertyId="211250"/>
+								<property desc="Length of Micro Frames micor_LNUM*HMAX 4Byte" name="micr_lnum" propertyId="84560"/>
+								<property desc="Error Info" name="rngchk_outmode" propertyId="53070"/>	
+							</propertyList>
+						</group>
+						<group desc="" name="integration_time_duration">
+							<propertyList>
+								<property desc="Integration time (clk@120MHz) for phase1" name="exarea_intg_00" propertyId="84800"/>
+								<property desc="Integration time (clk@120MHz) for phase2" name="exarea_intg_01" propertyId="84840"/>
+								<property desc="Integration time (clk@120MHz) for phase3" name="exarea_intg_02" propertyId="84880"/>
+								<property desc="Integration time (clk@120MHz) for phase4" name="exarea_intg_03" propertyId="84920"/>
+								<property desc="Integration time (clk@120MHz) for phase5" name="exarea_intg_04" propertyId="84960"/>
+								<property desc="Integration time (clk@120MHz) for phase6" name="exarea_intg_05" propertyId="85000"/>
+								<property desc="Integration time (clk@120MHz) for phase7" name="exarea_intg_06" propertyId="85040"/>
+								<property desc="Integration time (clk@120MHz) for phase8" name="exarea_intg_07" propertyId="85080"/>
+
+								<property desc="Integration time repeat phases for phase0 pahse1" name="repeat_intg_00_01" propertyId="86080"/>
+								<property desc="Integration time repeat phases for phase2 pahse3" name="repeat_intg_02_03" propertyId="86090"/>
+								<property desc="Integration time repeat phases for phase4 pahse5" name="repeat_intg_04_05" propertyId="86100"/>
+								<property desc="Integration time repeat phases for phase4 pahse5" name="repeat_intg_06_07" propertyId="86110"/>
+
+								<property desc="Integration time >1ms enable phase0" name="exceed1ms_intg_enable_00" propertyId="85440"/>
+								<property desc="Integration time >1ms enable phase1" name="exceed1ms_intg_enable_01" propertyId="85480"/>
+								<property desc="Integration time >1ms enable phase2" name="exceed1ms_intg_enable_02" propertyId="85520"/>
+								<property desc="Integration time >1ms enable phase3" name="exceed1ms_intg_enable_03" propertyId="85560"/>
+								<property desc="Integration time >1ms enable phase4" name="exceed1ms_intg_enable_04" propertyId="85600"/>
+								<property desc="Integration time >1ms enable phase5" name="exceed1ms_intg_enable_05" propertyId="85640"/>
+								<property desc="Integration time >1ms enable phase6" name="exceed1ms_intg_enable_06" propertyId="85680"/>
+								<property desc="Integration time >1ms enable phase7" name="exceed1ms_intg_enable_07" propertyId="85720"/>
+							</propertyList>
+						</group>
+					</groupList>
+				</section>
+				<section desc="" name="streaming_setting">
+					<groupList>
+						<group desc="" name="streaming">
+							<propertyList>
+								<property desc="Check high/low threshold of pixel values" name="rngchken" propertyId="51710"/>
+								<property desc="Mode Select 0: Software Standby 1: Streaming" name="mode_sel" propertyId="40970"/>
+							</propertyList>
+						</group>
+					</groupList>
+				</section>
+				<section desc="" name="output_block">
+					<groupList>
+						<group desc="" name="temp_sensor">
+							<propertyList>
+								<property desc="Display format of temperature" name="thrm_signed" propertyId="51200"/>
+								<property desc="Temperature - 40 to 125[deg]" name="thrm_dt_deg" propertyId="51230"/>
+							</propertyList>
+						</group>
+					</groupList>
+				</section>
+				<section desc="" name="calbration">
+					<groupList>
+						<group desc="" name="phase_calib">
+							<propertyList>
+								<property desc="" name="phase_corr_1" propertyId="100001"/>
+								<property desc="" name="phase_corr_2" propertyId="100002"/>
+								<property desc="" name="disable_offset_corr" propertyId="100003"/>
+								<property desc="" name="disable_temp_corr" propertyId="100004"/>
+								<property desc="" name="coeff_illum" propertyId="100005"/>
+								<property desc="" name="coeff_sensor" propertyId="100006"/>
+								<property desc="" name="tillum_calib" propertyId="100007"/>
+								<property desc="" name="tsensor_calib" propertyId="100008"/>
+								<property desc="" name="calib_prec" propertyId="100009"/>
+							</propertyList>
+						</group>
+						<group desc="" name="phase_nl_corr">
+							<propertyList>
+								<property desc="" name="phase_lin_coeff_0" propertyId="200001"/>
+								<property desc="" name="phase_lin_coeff_1" propertyId="200002"/>
+								<property desc="" name="phase_lin_coeff_2" propertyId="200003"/>
+								<property desc="" name="phase_lin_coeff_3" propertyId="200004"/>
+								<property desc="" name="phase_lin_coeff_4" propertyId="200005"/>
+								<property desc="" name="phase_lin_coeff_5" propertyId="200006"/>
+								<property desc="" name="phase_lin_coeff_6" propertyId="200007"/>
+								<property desc="" name="phase_lin_coeff_7" propertyId="200008"/>
+								<property desc="" name="phase_lin_coeff_8" propertyId="200009"/>
+								<property desc="" name="phase_lin_corr_dis" propertyId="200010"/>
+								<property desc="" name="phase_lin_corr_period" propertyId="200011"/>
+							</propertyList>
+						</group>
+						<group desc="" name="temp_sensor">
+							<propertyList>
+								<!--  <property desc="" name="tsensor" propertyId="300001"/> -->
+								<property desc="" name="tillum_slv_addr" propertyId="300002"/>
+								<!-- <property desc="" name="tillum" propertyId="300003"/> -->
+								<property desc="" name="tillum_en" propertyId="300004"/>
+							</propertyList>
+						</group>
+					</groupList>
+				</section>
+
+				<section desc="" name="DE">
+					<groupList>
+						<group desc="" name="frame_structure">
+							<propertyList>
+								<property desc="IDLE time of  phase 0" name="sub_vblk0" propertyId="86480"/>
+								<property desc="IDLE time of  phase 1" name="sub_vblk1" propertyId="86490"/>
+								<property desc="IDLE time of  phase 2" name="sub_vblk2" propertyId="86500"/>
+								<property desc="IDLE time of  phase 3" name="sub_vblk3" propertyId="86510"/>
+								<property desc="IDLE time of  phase 4" name="sub_vblk4" propertyId="86520"/>
+								<property desc="IDLE time of  phase 5" name="sub_vblk5" propertyId="86530"/>
+								<property desc="IDLE time of  phase 6" name="sub_vblk6" propertyId="86540"/>
+								<property desc="IDLE time of  phase 7" name="sub_vblk7" propertyId="86550"/>
+							</propertyList>
+						</group>
+						<group desc="" name="gda_gdb_laser_exposure_signals">
+							<propertyList>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth3" propertyId="86160"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth2" propertyId="86161"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth1" propertyId="86162"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth0" propertyId="86163"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth7" propertyId="86170"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth6" propertyId="86171"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth5" propertyId="86172"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDA) for phases" name="gdacnsth4" propertyId="86173"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth3" propertyId="86200"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth2" propertyId="86201"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth1" propertyId="86202"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth0" propertyId="86203"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth7" propertyId="86210"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth6" propertyId="86211"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth5" propertyId="86212"/>
+								<property desc="Static Low/High Exposure signals(MIX) setting(GDB) for phases" name="gdbcnsth4" propertyId="86213"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth3" propertyId="86240"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth2" propertyId="86241"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth1" propertyId="86242"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth0" propertyId="86243"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth7" propertyId="86250"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth6" propertyId="86251"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth5" propertyId="86252"/>
+								<property desc="Static Low/High Illumination signal(MOD) setting(Laser) for phases" name="gdlcnsth4" propertyId="86253"/>
+							</propertyList>
+						</group>
+					</groupList>
+				</section>
+			</sectionList>
+		</guiView>
+	</guiViewList>
+</RegMap>

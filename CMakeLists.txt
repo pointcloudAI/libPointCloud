@@ -29,6 +29,15 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
          ./libs/ubuntu_arm/include/pointcloud-1.0.0/
        )
        set(PointCloud ./libs/ubuntu_arm/lib)
+     elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")
+      set(CMAKE_CXX_FLAGS  "-pthread -std=c++11 -fPIC -ffast-math")
+      set(COMMON_INCLUDE
+         /usr/include/libusb-1.0
+         ./include/
+         ./libs/rasp4/include/pointcloud-1.0.0/
+       )
+       set(PointCloud ./libs/rasp4/lib)
+      message("use PointCloud SDK ./libs/rasp4/lib")
      else()
      set(CMAKE_CXX_FLAGS  "-msse2 -pthread -std=c++11 -fPIC -ffast-math")
      set(COMMON_INCLUDE
@@ -98,5 +107,5 @@ set(CPACK_PACKAGE_VENDOR "pointcloud.ai")
 set(CPACK_SOURCE_GENERATOR "Developer")
 
 add_subdirectory(examples/ExtractRawData)
-#add_subdirectory(examples/DepthMeasure)
+add_subdirectory(examples/DepthMeasure)
 #add_subdirectory(examples/DepthAscii)
