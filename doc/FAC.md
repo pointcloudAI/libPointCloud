@@ -38,8 +38,8 @@
 * 如何设置帧率
   
   我们提供2中方法设置帧率
-  >1. 通过程序代码设置帧率，详情参看 [c++API指南](https://github.com/pointcloudAI/libPointCloud/blob/master/doc/UserGuide-cPlus.md)
-  >2. 通过配置conf 文件设置频率。在 目录下找到SonyCDKCameraStandard.conf，设置micr_lnum的值就可以设置启动时的默认帧率，详情如下：
+  >1. 通过程序代码设置帧率： 详情参看 [c++API指南](https://github.com/pointcloudAI/libPointCloud/blob/master/doc/UserGuide-cPlus.md)
+  >2. 通过配置conf 文件设置频率:  在 share/pointcloud-1.0.0/conf 目录下找到SonyCDKCameraStandard.conf，设置micr_lnum的值就可以设置启动时的默认帧率，详情如下：
   
     >```
     >[params]
