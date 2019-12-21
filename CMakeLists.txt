@@ -108,4 +108,4 @@ set(CPACK_SOURCE_GENERATOR "Developer")
 
 add_subdirectory(examples/ExtractRawData)
 add_subdirectory(examples/DepthMeasure)
-#add_subdirectory(examples/DepthAscii)
+add_subdirectory(examples/SimplePointCloudViewer)
