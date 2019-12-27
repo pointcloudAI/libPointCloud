@@ -50,6 +50,14 @@
     # micr_lnum as 10000 to set  5fps  ; 
     micr_lnum = 5000 # 3333 #10000 #2500 
 
+* 如何设置光源功率
+  
+我们可以通过配置conf 文件设置光源功率:  在 share/pointcloud-1.0.0/conf 目录下找到SonyCDKCameraStandard.conf，设置micr_lnum的值就可以设置启动时的默认帧率，详情如下：
 
-
+>[defining_params]
+>#0 ： 0.5 scale integration time 
+>#1 ：disable power supplier switch,
+>#2 ： double scale integration time
+>intg_scale = 1
+>intg_time = 100 #10~100  #   please confirm that intg_time may after  intg_scale
 
