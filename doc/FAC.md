@@ -61,3 +61,21 @@
 >intg_scale = 1
 >intg_time = 100 #10~100  #   please confirm that intg_time may after  intg_scale
 
+
+* 如何修改光源的频率
+
+  模块的频率 目前是采用了100MHz 和20MHz，早期有部分模组是 采用了100MHz和 80MHz，
+  修改频率需要重新做全部的校准过程才能得到准确的深度数据。
+  以下是支持的频率（Mhz）：
+    >4,8,16,20,30,35,36,40,50,60,70,80,90,100
+  
+  修改 频率的方式： 在 share/pointcloud-1.0.0/conf 目录下找到SonyCDKCameraStandard.conf
+
+      [defining_params]
+      mod_freq1 = 100
+      mod_freq2 = 80
+      measure_mode = 3
+
+measure_mode 为1 则仅使用 mod_freq1作为测量的频率
+measure_mode 为2 则仅使用 mod_freq2作为测量的频率
+measure_mode 为3 则同时使用 mod_freq1 和 mod_freq2作为测量的频率
