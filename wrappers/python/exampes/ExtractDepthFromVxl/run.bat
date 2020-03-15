@@ -1,7 +1,7 @@
 #!/bin/bash
-export POINTCLOUD_SDK_PATH="./../../../../libs/macos"
+export POINTCLOUD_SDK_PATH="./../../../../libs/windows"
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$POINTCLOUD_SDK_PATH/lib"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$POINTCLOUD_SDK_PATH/lib"
 export PYTHONPATH=$POINTCLOUD_SDK_PATH/lib/python3:$PYTHONPATH
 echo "$PYTHONPATH"
-python ShowDepthNoGUI.py
+python3 vxltocsv.py
