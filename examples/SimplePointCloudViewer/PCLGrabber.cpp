@@ -86,9 +86,9 @@ void PCLGrabber::_callback(DepthCamera &depthCamera, const Frame &frame, DepthCa
         for(auto &p: f->points)
         {
           auto &q = (*pointCloud)->points[index];
-          q.x = p.x;
-          q.y = p.y;
-          q.z = p.z;
+          q.x = p.x*1000;
+          q.y = p.y*1000;
+          q.z = p.z*1000;
           //q.intensity = p.i*256;
           index++;
         }
