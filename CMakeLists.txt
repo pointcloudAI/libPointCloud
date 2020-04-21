@@ -106,6 +106,8 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 set(CPACK_PACKAGE_VENDOR "pointcloud.ai")
 set(CPACK_SOURCE_GENERATOR "Developer")
 
-add_subdirectory(examples/ExtractRawData)
 add_subdirectory(examples/DepthMeasure)
+add_subdirectory(examples/ParseVXL)
+add_subdirectory(examples/ExtractRawData)
 add_subdirectory(examples/SimplePointCloudViewer)
+

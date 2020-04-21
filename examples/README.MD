@@ -2,6 +2,7 @@
 * DepthAscii
 * DepthMeasure
 * ExtractRawData
+* ParseVXL
 
 ## DepthAscii
 
@@ -19,3 +20,10 @@ do your calibration in same cases.
 
 这个例子展示了如何获得原始的四相位数据，这在有些情况下是有用的。例如您修改了光源的调制频率。
 您可以重新计算得到phase和amplitude ，可以重新做自己的校准。
+
+## ParseVXL
+
+This C++ example shows how to extract frame information from VXL files.
+
+这个例子展示了从保存的VXL 文件中解析 出 深度信息和点云信息
+
