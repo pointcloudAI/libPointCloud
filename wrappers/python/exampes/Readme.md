@@ -1,6 +1,6 @@
 ## Python versin
 1. For windows ,please use python 3.5.4 32bit
-2. For mac , please use python 3.5.4 64bit
+2. For mac , please use python 3.7.2 64bit
 3. For ubuntu  , please use python 3.6.5 64bit 
 
 ## Path setting 

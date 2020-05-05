@@ -19,19 +19,22 @@ def getDefaultSdkPath():
     path = ''
         
     if sys.platform == 'win32':
-      import win32api
-      path = win32api.GetLongPathName(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\..\\..\\..\\..")
-      print('path',path)
-      path = path + os.sep + "libs"+os.sep +"windows"
-      print('path',path)
+        import win32api
+        path = win32api.GetLongPathName(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\..\\..\\..\\..")
+        print('path',path)
+        path = path + os.sep + "libs"+os.sep +"windows"
+      
     elif sys.platform == 'darwin':
-      path = sys.path[0] + os.sep + "PointCloudSDK"+os.sep +"macos"
-
+        path = sys.path[0]+ "/../../../.." + os.sep + "libs"+os.sep +"macos"
+    else :
+        path = sys.path[0]+ "/../../../.." + os.sep + "libs"+os.sep +"ubuntu"
+    
+    print('path',path)
     if os.path.isdir(path):
-      return  path   
+        return  path   
     else:
-      print('Failed to get default PointCloud SDK path')
-      return None
+        print('Failed to get default PointCloud SDK path')
+        return None
 sdkPath = getDefaultSdkPath()
 
 libPath = sdkPath + os.sep + "lib"
