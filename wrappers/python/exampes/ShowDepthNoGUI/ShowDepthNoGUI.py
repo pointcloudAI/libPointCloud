@@ -12,6 +12,36 @@
 #     Input [Enter] Key
 ###
 
+import sys
+import os
+
+def getDefaultSdkPath():
+    path = ''
+        
+    if sys.platform == 'win32':
+      import win32api
+      path = win32api.GetLongPathName(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\..\\..\\..\\..")
+      print('path',path)
+      path = path + os.sep + "libs"+os.sep +"windows"
+      print('path',path)
+    elif sys.platform == 'darwin':
+      path = sys.path[0] + os.sep + "PointCloudSDK"+os.sep +"macos"
+
+    if os.path.isdir(path):
+      return  path   
+    else:
+      print('Failed to get default PointCloud SDK path')
+      return None
+sdkPath = getDefaultSdkPath()
+
+libPath = sdkPath + os.sep + "lib"
+pythonPath = libPath + os.sep + "python3"
+print("pythonPath ",pythonPath)
+sys.path.append(libPath) 
+sys.path.append(pythonPath) 
+
+print("***** SDK path:",sdkPath," libPath:",libPath)
+
 import PointCloud
 import numpy as np
 import sys
@@ -99,7 +129,7 @@ devices = cameraSystem.scan()
 if len(devices) == 1:
     print(" Find one device.")
     window = MainWindow(cameraSystem)
-    key = raw_input("Input enter key to quit.")
+    key = input("Input enter key to quit.")
     print(" Quit now.")
     window.stop()
 else:
