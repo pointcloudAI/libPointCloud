@@ -77,13 +77,28 @@ int main(int argc, char *argv[])
         RawDataFramePtr rawFrame = std::dynamic_pointer_cast<RawDataFrame>(frameStream->frames[DepthCamera::FRAME_RAW_FRAME_UNPROCESSED]);
         
         uint index = 240*640+320;
+        std::cout << " ============= Frame :" << i << " begin :" << std::endl;
         
         size_t raw_len = rawFrame->data.size();
         uint16_t* rawdata = (uint16_t*) rawFrame->data.data();
-        std::cout << " index:"<< i << " phase:" << rawdata[2*index+1] << " amplitude:" << rawdata[2*index] << " tsensor:" <<  (int)rawFrame->data[raw_len - 2] << " tillum:" << (int)rawFrame->data[raw_len - 1] << std::endl;
+        std::cout << "RawDataFrame  index:"<< i << " phase:" << rawdata[2*index+1] << " amplitude:" << rawdata[2*index] << " tsensor:" <<  (int)rawFrame->data[raw_len - 2] << " tillum:" << (int)rawFrame->data[raw_len - 1] << std::endl;
         Ptr<XYZIPointCloudFrame> xyzFrame = std::dynamic_pointer_cast<XYZIPointCloudFrame>(frameStream->frames[DepthCamera::FRAME_XYZI_POINT_CLOUD_FRAME]);
+
         IntensityPoint point = xyzFrame->points[index];
-        std::cout << " index:" << i   << " x:" <<point.x << " y:" <<point.y << " z:" <<point.z << " i:" <<point.i  << std::endl ;
+        std::cout << "XYZIPointCloudFrame frame:" << i << "point index : " << index  << " x:" <<point.x << " y:" <<point.y << " z:" <<point.z << " i:" <<point.i  << std::endl ;
+
+        Ptr<DepthFrame> depthFrame = std::dynamic_pointer_cast<DepthFrame>(frameStream->frames[DepthCamera::FRAME_DEPTH_FRAME]);
+        std::cout << "Depth frame size = " << depthFrame->size.width << "x" << depthFrame->size.height << std::endl;
+        std::cout << "Depth frame :" << i << "point index : " << index  <<" depth : "  << depthFrame->depth.data()[index] << " amplitude: " <<  depthFrame->amplitude.data()[index] <<std::endl;
+
+        Ptr<ToFRawFrame> tofRawFrame = std::dynamic_pointer_cast<ToFRawFrame>(frameStream->frames[DepthCamera::FRAME_RAW_FRAME_PROCESSED]);
+        std::cout << "tofRawFrame frame size = " << tofRawFrame->size.width << "x" << tofRawFrame->size.height << std::endl;
+        int depth=((ushort *)tofRawFrame->phase())[index];
+        int amp=((ushort *)tofRawFrame->amplitude())[index];
+        std::cout << "tofRawFrame frame :" << i << " point index : " << index  <<" phase : "  << depth<< " amplitude: " <<amp <<std::endl;
+
+
+       
     }
     // return true;
     
