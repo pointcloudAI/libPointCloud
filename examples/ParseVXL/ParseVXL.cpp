@@ -13,7 +13,7 @@
 #include <fstream>
 //#include "ToFSonyCamera.h"
 //#include "USBBulkPhasesStreamer.h"
-#include "framestream.h"
+#include "FrameStream.h"
 //#include <ToFSonyDepthFrameGenerator.h>
 //#include <ToFSonyFrameGenerator.h>
 // Also include GLFW to allow for graphical display
