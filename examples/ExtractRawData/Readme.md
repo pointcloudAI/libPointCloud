@@ -4,7 +4,14 @@ The unit is Mhz and the available values are integers as below :
 4,8,16,20,30,35,36,40,50,60,70,80,90,100
 ```
 
+## Supported integration time:
 
+The unit is  percentage
+available values are integers as below :
+
+```
+5 ~ 100
+```
 ## Modulation frequency easy setting :
 
 For easy setting ,please modify the conf file which named SonyCDKCameraStandard.conf in below path:
