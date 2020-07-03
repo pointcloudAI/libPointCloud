@@ -7,8 +7,7 @@ The unit is Mhz and the available values are integers as below :
 
 ## Frame Structure and data format of RAW12
 
-![Frame Structure](https://github.com/pointcloudAI/libPointCloud/blob/master/examples/ExtractRawData/Data%20Format%20RAW12.jpg)
+![Frame Structure](https://github.com/pointcloudAI/libPointCloud/blob/master/examples/ExtractRawData/Frame_Structure.jpg)
 
 ![Data Format of RAW12](https://github.com/pointcloudAI/libPointCloud/blob/master/examples/ExtractRawData/Data%20Format%20RAW12.jpg)
 
-## Frame Structure and data format of RAW12:
