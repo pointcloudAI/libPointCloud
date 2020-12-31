@@ -116,7 +116,11 @@ class MainWindow():
         
         print("is a raw frame and frame size is  %d." %rawFrame.data.size())
         rawData=np.array(rawFrame.data,dtype='uint8')
-        print("rawData",len(rawData))
+        print("rawData",len(rawData)," id " ,rawFrame.id," timestamp",rawFrame.timestamp)
+        tSensorIndex = 1843596-396 + 117
+        temperature_of_sensor = rawData[tSensorIndex]-40
+        
+        print("temperature_of_sensor",temperature_of_sensor)
         index = 0
         # for j in range(0,self.pixelCount,2):
         #     # print("i",i)
